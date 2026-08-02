@@ -142,9 +142,6 @@ The Data Center Stack can be used for:
 - [`the-data-center-stack-v1-0.html`](./the-data-center-stack-v1-0.html)  
   Editable HTML source
 
-- [`the-data-center-stack-v1-0-build.py`](./the-data-center-stack-v1-0-build.py)  
-  Python export script
-
 ## License
 
 The Data Center Stack is licensed under the [Creative Commons Attribution 4.0 International License](./LICENSE).
