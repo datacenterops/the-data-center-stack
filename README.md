@@ -4,7 +4,7 @@ A framework for understanding the data center industry.
 
 ![The Data Center Stack v1.0](./the-data-center-stack-v1-0.png)
 
-**Current release: v1.0**
+**Current release: [v1.0](https://github.com/datacenterops/the-data-center-stack/releases/tag/v1.0)**
 
 [Download PNG](./the-data-center-stack-v1-0.png) |
 [Download PDF](./the-data-center-stack-v1-0.pdf) |
