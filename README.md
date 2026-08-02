@@ -1,7 +1,7 @@
 # the-data-center-stack
 A shared framework for understanding how the major functions of the data center industry fit together.
 
-![The Data Center Stack](./the-data-center-stack.png)
+![The Data Center Stack](./the-data-center-stack-v1-0.png)
 
 ## Overview
 
