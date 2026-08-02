@@ -1,155 +1,216 @@
 # The Data Center Stack
 
-A framework for understanding the data center industry.
+A community framework for understanding the data center industry.
 
 ![The Data Center Stack v1.0](./the-data-center-stack-v1-0.png)
 
-**Current release: [v1.0](https://github.com/datacenterops/the-data-center-stack/releases/tag/v1.0)**
+**Current Release:** [v1.0](https://github.com/datacenterops/the-data-center-stack/releases/tag/v1.0)
 
 [Download PNG](./the-data-center-stack-v1-0.png) |
 [Download PDF](./the-data-center-stack-v1-0.pdf) |
-[View HTML source](./the-data-center-stack-v1-0.html)
+[View HTML Source](./the-data-center-stack-v1-0.html)
+
+---
 
 ## Overview
 
-The data center industry is highly interconnected, but there is no simple, shared framework for explaining how its major functions fit together.
+The data center industry is highly interconnected, yet there has never been a simple, shared framework for explaining how its major functions fit together.
 
-The Data Center Stack organizes those functions into six layers, moving from the physical facility at the base to the applications and services at the top.
+The Data Center Stack organizes those functions into six layers, progressing from the physical facility at the foundation to the digital workloads that ultimately consume the infrastructure.
 
-The goal is not to classify companies. Most organizations operate across several layers.
+The framework is not intended to classify companies. Most organizations operate across multiple layers.
 
-The goal is to create a common language for customers, technicians, project managers, executives, partners, students and experienced professionals across the data center ecosystem.
+Instead, it provides a common language that helps customers, technicians, project managers, executives, partners, students, and experienced professionals communicate more clearly about the industry.
+
+---
 
 ## The Six Layers
 
 ### 1. Foundation
 
-**Function: Build**
+**Function:** Build
 
-Land, power, water, structure and the physical facility everything else depends on.
+Land, power, water, structure, and the physical facility everything else depends on.
 
-**Who operates here:**
+**Typical participants**
 
 - Utilities
 - Developers
 - General contractors and MEP firms
 
+---
+
 ### 2. Infrastructure
 
-**Function: Supply**
+**Function:** Supply
 
-The physical and digital building blocks: compute, storage, network, power, cooling, connectivity, security and software.
+The physical and digital building blocks: compute, storage, network, power, cooling, connectivity, security, and software.
 
-**Who operates here:**
+**Typical participants**
 
 - OEMs and software vendors
 - Distributors
 - Carriers
 
+---
+
 ### 3. Deployment
 
-**Function: Install**
+**Function:** Install
 
-Receive, stage, install, integrate, relocate and decommission infrastructure across its lifecycle.
+Receive, stage, install, integrate, relocate, and decommission infrastructure across its lifecycle.
 
-**Who operates here:**
+**Typical participants**
 
 - Field services and smart hands
 - Integrators and logistics providers
 - ITAD and decommissioning firms
 
+---
+
 ### 4. Operations
 
-**Function: Run**
+**Function:** Run
 
-The continuous work that keeps production infrastructure reliable and available: monitoring, security, maintenance and optimization.
+The continuous work that keeps production infrastructure reliable and available through monitoring, maintenance, security, and optimization.
 
-**Who operates here:**
+**Typical participants**
 
 - Colocation providers
 - Enterprise IT and MSPs
 - NOC and SOC teams
 
+---
+
 ### 5. Platform
 
-**Function: Provision**
+**Function:** Provision
 
-The abstraction layer that makes physical infrastructure consumable: virtualization, orchestration and cloud services.
+The abstraction layer that makes physical infrastructure consumable through virtualization, orchestration, and cloud services.
 
-**Who operates here:**
+**Typical participants**
 
 - Cloud providers and hyperscalers
 - Enterprise IT
 - Managed hosting providers
 
+---
+
 ### 6. Workloads
 
-**Function: Consume**
+**Function:** Consume
 
-Applications, AI, SaaS and enterprise services that generate value and drive outcomes.
+Applications, AI, SaaS, and enterprise services that generate business value.
 
-**Who operates here:**
+**Typical participants**
 
 - SaaS and content companies
 - AI companies
 - Enterprise business units
 
+---
+
 ## Four Principles
 
-The framework is built around four principles:
+The framework is built around four core principles.
 
-1. **Each layer depends on the one below it.** Nothing at the top runs without everything below it.
+1. **Each layer depends on the one below it.** Nothing at the top exists without everything beneath it.
 
-2. **The stack represents functions, not companies.** Most organizations operate across several layers.
+2. **The stack represents functions, not companies.** Most organizations operate across multiple layers.
 
-3. **No layer is optional.** Layers can be outsourced, but never skipped.
+3. **No layer is optional.** Layers may be outsourced, but they cannot be skipped.
 
-4. **Some functions span every layer.** Security, connectivity and compliance appear at each level.
+4. **Some functions span the entire stack.** Security, connectivity, and compliance exist at every level.
+
+---
 
 ## Version 1.0
 
 Version 1.0 is the first public release of The Data Center Stack.
 
-The framework is intended to be refined through discussion, practical use and feedback from people working across the industry.
+The framework is intended to evolve through community discussion, practical use, and real-world feedback.
 
-Questions, critiques and suggested revisions are welcome through [GitHub Issues](https://github.com/datacenterops/the-data-center-stack/issues).
+### Join the conversation
 
-Useful questions include:
+**GitHub Discussions**
 
-- Does the framework make the industry easier to explain?
+Use Discussions to:
+
+- Share ideas
+- Ask questions
+- Challenge assumptions
+- Suggest new concepts
+- Discuss future directions
+
+**GitHub Issues**
+
+Use Issues to:
+
+- Report errors
+- Suggest specific improvements
+- Track proposed revisions
+- Request additions or corrections
+
+Some questions we're actively exploring include:
+
+- Does this framework make the industry easier to explain?
 - Which layer needs the most refinement?
 - What is missing or oversimplified?
-- Should connectivity have its own layer?
+- Should connectivity become its own layer?
+
+---
 
 ## Using the Framework
 
-The Data Center Stack can be used for:
+Possible uses include:
 
 - Training and onboarding
-- Presentations and educational materials
+- Customer education
+- Executive presentations
 - Industry discussions
 - Project planning
-- Customer and executive communication
+- Educational materials
 
-## Repository Files
+---
 
-- [`the-data-center-stack-v1-0.png`](./the-data-center-stack-v1-0.png)  
-  Screen and presentation-ready graphic
+## Repository Contents
 
-- [`the-data-center-stack-v1-0.pdf`](./the-data-center-stack-v1-0.pdf)  
-  Printable PDF version
+| File | Description |
+|------|-------------|
+| `the-data-center-stack-v1-0.png` | Presentation-ready graphic |
+| `the-data-center-stack-v1-0.pdf` | Printable version |
+| `the-data-center-stack-v1-0.html` | Editable HTML source |
 
-- [`the-data-center-stack-v1-0.html`](./the-data-center-stack-v1-0.html)  
-  Editable HTML source
+---
+
+## Roadmap
+
+Future versions may include:
+
+- Additional explanatory diagrams
+- Expanded examples
+- Community-driven refinements
+- Industry translations
+- Version history and changelog
+
+Suggestions are welcome.
+
+---
 
 ## License
 
-The Data Center Stack is licensed under the [Creative Commons Attribution 4.0 International License](./LICENSE).
+The Data Center Stack is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
 
-You may share and adapt the framework with appropriate attribution.
+You are welcome to use, share, adapt, and build upon the framework with appropriate attribution.
+
+---
 
 ## Attribution
 
-**The Data Center Stack v1.0 by David Korté, DatacenterOps**
+**The Data Center Stack v1.0**
 
-[datacenterops.com](https://datacenterops.com)
+Created by **David Korté**
+
+DatacenterOps
+
+https://datacenterops.com
