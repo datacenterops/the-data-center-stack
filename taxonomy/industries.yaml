@@ -1,0 +1,2276 @@
+taxonomy:
+  name: The Data Center Stack Industry Taxonomy
+  version: 0.1.0
+  status: draft
+  license: CC-BY-4.0
+  purpose: Classify organizations and industries by the data-center function they directly perform.
+  canonical_file: taxonomy/industries.yaml
+  hierarchy: Layer -> Industry Group -> Industry -> Specialty
+  core_industry_count: 88
+  ecosystem_enabler_count: 15
+  industries_by_layer:
+    DCS-L1: 12
+    DCS-L2: 18
+    DCS-L3: 14
+    DCS-L4: 14
+    DCS-L5: 14
+    DCS-L6: 16
+classification_rules:
+  primary_industry: Select the industry that best represents the organization's principal data-center function.
+  primary_layer: Use the layer assigned to the primary industry.
+  secondary_industries: Assign only when the organization directly performs another material function.
+  do_not_overmap: Do not assign a layer merely because an organization sells to, buys from, or is used by that layer.
+  specialties: Use specialties to add precision without creating unnecessary industries.
+  stack_consumer: Organizations that primarily consume data-center infrastructure but do not supply a Stack function
+    should be classified as Stack Consumers.
+  ecosystem_enabler: Organizations that advise, finance, insure, regulate, educate, research, recruit for, or convene
+    the ecosystem should be classified outside Layers 1-6.
+  uncertain: Use Research Required when evidence is insufficient instead of guessing.
+layers:
+- layer_id: DCS-L1
+  number: 1
+  name: Foundation
+  function: Build
+  definition: Land, power, water, structure and the physical facility everything else depends on.
+- layer_id: DCS-L2
+  number: 2
+  name: Infrastructure
+  function: Supply
+  definition: 'The physical and digital building blocks: compute, storage, network, power, cooling, connectivity,
+    security and software.'
+- layer_id: DCS-L3
+  number: 3
+  name: Deployment
+  function: Deploy
+  definition: Deploy, integrate, migrate, upgrade, relocate and retire infrastructure across its lifecycle.
+- layer_id: DCS-L4
+  number: 4
+  name: Operations
+  function: Operate
+  definition: Monitor, secure, maintain and optimize production infrastructure for reliability and uptime.
+- layer_id: DCS-L5
+  number: 5
+  name: Platform
+  function: Abstract
+  definition: Turn physical infrastructure into consumable capacity through virtualization, orchestration and cloud
+    services.
+- layer_id: DCS-L6
+  number: 6
+  name: Workloads
+  function: Run
+  definition: Applications, services and digital workloads that consume platform and infrastructure capacity.
+industries:
+- industry_id: DCS-L1-DEV-001
+  name: Data Center Developers
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-DEV
+  industry_group: Development & Real Estate
+  definition: Organizations that originate, entitle, finance and develop data center facilities or campuses.
+  includes:
+  - greenfield data center development
+  - build-to-suit development
+  - powered shell development
+  excludes:
+  - general contracting
+  - colocation operations after facility turnover
+  common_specialties:
+  - hyperscale campuses
+  - powered shells
+  - build-to-suit
+  - brownfield redevelopment
+  keywords:
+  - data center developer
+  - campus development
+  - powered shell
+  - build-to-suit
+- industry_id: DCS-L1-REA-001
+  name: Site Selection & Data Center Real Estate
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-DEV
+  industry_group: Development & Real Estate
+  definition: Organizations focused on locating, acquiring, leasing, brokering or advising on land and real estate
+    for data center development or occupancy.
+  includes:
+  - site selection
+  - land acquisition
+  - data center brokerage
+  - location strategy
+  excludes:
+  - facility development
+  - general commercial brokerage with no data center practice
+  common_specialties:
+  - land sourcing
+  - brokerage
+  - market analysis
+  - site diligence
+  keywords:
+  - site selection
+  - data center real estate
+  - land acquisition
+  - brokerage
+- industry_id: DCS-L1-UTL-001
+  name: Electric Utilities & Grid Providers
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-ENE
+  industry_group: Utilities & Energy
+  definition: Organizations providing grid interconnection, transmission or distribution of electricity to data
+    center sites.
+  includes:
+  - electric utilities
+  - grid operators
+  - transmission providers
+  - distribution utilities
+  excludes:
+  - generator manufacturers
+  - UPS manufacturers
+  - electrical contractors
+  common_specialties:
+  - interconnection
+  - substation service
+  - transmission
+  - distribution
+  keywords:
+  - electric utility
+  - grid
+  - transmission
+  - distribution
+  - interconnection
+- industry_id: DCS-L1-ENE-001
+  name: Power Generation & Energy Supply
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-ENE
+  industry_group: Utilities & Energy
+  definition: Organizations developing or supplying utility-scale electrical generation or contracted energy used
+    to serve data center demand.
+  includes:
+  - renewable generation
+  - gas generation
+  - nuclear generation
+  - power purchase supply
+  excludes:
+  - backup generators installed at data centers
+  - critical power equipment
+  common_specialties:
+  - PPA supply
+  - renewables
+  - nuclear
+  - natural gas generation
+  keywords:
+  - power generation
+  - energy supply
+  - PPA
+  - renewable energy
+  - nuclear
+- industry_id: DCS-L1-WTR-001
+  name: Water & Utility Infrastructure
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-ENE
+  industry_group: Utilities & Energy
+  definition: Organizations providing water, wastewater or related municipal utility infrastructure needed to support
+    data center sites.
+  includes:
+  - water utilities
+  - wastewater providers
+  - water infrastructure
+  excludes:
+  - facility cooling equipment
+  - mechanical contractors
+  common_specialties:
+  - potable water
+  - reclaimed water
+  - wastewater
+  - utility extensions
+  keywords:
+  - water utility
+  - wastewater
+  - reclaimed water
+  - water infrastructure
+- industry_id: DCS-L1-ENG-001
+  name: Architecture & Engineering
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-DES
+  industry_group: Design & Engineering
+  definition: Firms providing multidisciplinary architecture, civil, structural and facility engineering for data
+    center buildings and campuses.
+  includes:
+  - architectural design
+  - civil engineering
+  - structural engineering
+  - multidiscipline design
+  excludes:
+  - MEP-only engineering
+  - general contracting
+  common_specialties:
+  - architecture
+  - civil
+  - structural
+  - campus planning
+  keywords:
+  - architecture
+  - engineering
+  - A&E
+  - mission critical design
+- industry_id: DCS-L1-ENG-002
+  name: MEP Engineering
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-DES
+  industry_group: Design & Engineering
+  definition: Engineering firms primarily responsible for mechanical, electrical and plumbing system design in data
+    center facilities.
+  includes:
+  - electrical design
+  - mechanical design
+  - plumbing design
+  - power studies
+  excludes:
+  - equipment manufacturing
+  - mechanical or electrical contracting
+  common_specialties:
+  - power studies
+  - cooling design
+  - electrical design
+  - mechanical design
+  keywords:
+  - MEP
+  - electrical engineering
+  - mechanical engineering
+  - power design
+- industry_id: DCS-L1-CON-001
+  name: General Contractors & Construction Managers
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-CON
+  industry_group: Construction
+  definition: Organizations responsible for overall construction execution, subcontractor coordination, schedule
+    and delivery of data center facilities.
+  includes:
+  - general contracting
+  - construction management
+  - design-build construction
+  excludes:
+  - specialty electrical contracting
+  - white-space IT deployment
+  common_specialties:
+  - mission critical construction
+  - design-build
+  - construction management
+  keywords:
+  - general contractor
+  - construction manager
+  - mission critical construction
+  - GC
+- industry_id: DCS-L1-CON-002
+  name: Civil & Site Contractors
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-CON
+  industry_group: Construction
+  definition: Contractors performing grading, excavation, underground utilities, roads, drainage and other site
+    preparation work.
+  includes:
+  - grading
+  - excavation
+  - stormwater
+  - underground utilities
+  excludes:
+  - building electrical work
+  - IT deployment
+  common_specialties:
+  - earthwork
+  - roads
+  - site concrete
+  - utility extensions
+  keywords:
+  - civil contractor
+  - site work
+  - grading
+  - excavation
+  - stormwater
+- industry_id: DCS-L1-CON-003
+  name: Electrical Contractors
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-CON
+  industry_group: Construction
+  definition: Contractors installing facility electrical systems such as switchgear, busway, feeders, grounding
+    and medium-voltage distribution.
+  includes:
+  - medium-voltage installation
+  - switchgear installation
+  - busway installation
+  - grounding
+  excludes:
+  - electrical equipment manufacturing
+  - rack-level IT installation
+  common_specialties:
+  - substation installation
+  - generator connections
+  - busway
+  - power distribution
+  keywords:
+  - electrical contractor
+  - mission critical electrical
+  - switchgear installation
+- industry_id: DCS-L1-CON-004
+  name: Mechanical Contractors
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-CON
+  industry_group: Construction
+  definition: Contractors installing cooling plants, HVAC, piping and other facility mechanical systems.
+  includes:
+  - chilled-water piping
+  - HVAC installation
+  - cooling plant installation
+  excludes:
+  - cooling equipment manufacturing
+  - thermal design
+  common_specialties:
+  - mechanical piping
+  - air handling
+  - cooling plant buildout
+  keywords:
+  - mechanical contractor
+  - HVAC contractor
+  - chilled water
+  - mechanical piping
+- industry_id: DCS-L1-COM-001
+  name: Facility Commissioning & Integrated Systems Testing
+  layer_id: DCS-L1
+  primary_layer: 1
+  industry_group_id: DCS-L1-COM
+  industry_group: Commissioning
+  definition: Organizations verifying that facility systems are installed, integrated and performing as intended
+    before or during turnover to operations.
+  includes:
+  - commissioning authority
+  - integrated systems testing
+  - functional performance testing
+  excludes:
+  - routine maintenance testing
+  - application testing
+  common_specialties:
+  - Level 1-5 commissioning
+  - IST
+  - functional testing
+  keywords:
+  - commissioning
+  - CxA
+  - integrated systems testing
+  - IST
+- industry_id: DCS-L2-CMP-001
+  name: Server & Compute Hardware
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CMP
+  industry_group: Compute & Storage
+  definition: Manufacturers and suppliers of server systems and general-purpose compute hardware installed in data
+    centers.
+  includes:
+  - rack servers
+  - blade servers
+  - compute nodes
+  excludes:
+  - cloud compute services
+  - server installation services
+  common_specialties:
+  - rack servers
+  - blade systems
+  - modular compute
+  keywords:
+  - server
+  - compute hardware
+  - rack server
+  - blade server
+- industry_id: DCS-L2-CMP-002
+  name: Storage Hardware
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CMP
+  industry_group: Compute & Storage
+  definition: Manufacturers and suppliers of physical data storage systems and appliances.
+  includes:
+  - SAN
+  - NAS
+  - storage arrays
+  - backup appliances
+  excludes:
+  - cloud storage services
+  - storage software with no hardware
+  common_specialties:
+  - block storage
+  - file storage
+  - object storage appliances
+  keywords:
+  - storage hardware
+  - SAN
+  - NAS
+  - storage array
+- industry_id: DCS-L2-CMP-003
+  name: Semiconductors & Accelerators
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CMP
+  industry_group: Compute & Storage
+  definition: Manufacturers of CPUs, GPUs, AI accelerators and other silicon providing data center compute capability.
+  includes:
+  - CPUs
+  - GPUs
+  - AI accelerators
+  - DPUs
+  excludes:
+  - server systems
+  - cloud GPU services
+  common_specialties:
+  - AI accelerators
+  - processors
+  - DPUs
+  - custom silicon
+  keywords:
+  - GPU
+  - CPU
+  - accelerator
+  - processor
+  - semiconductor
+  - DPU
+- industry_id: DCS-L2-NET-001
+  name: Network Equipment
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-NET
+  industry_group: Network & Connectivity
+  definition: Manufacturers and suppliers of switches, routers and active network infrastructure used inside data
+    centers.
+  includes:
+  - switches
+  - routers
+  - network fabrics
+  excludes:
+  - carrier services
+  - structured cabling labor
+  common_specialties:
+  - leaf-spine switching
+  - routing
+  - network appliances
+  keywords:
+  - network equipment
+  - switch
+  - router
+  - ethernet fabric
+- industry_id: DCS-L2-NET-002
+  name: Optical Transceivers & Photonics
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-NET
+  industry_group: Network & Connectivity
+  definition: Manufacturers and suppliers of optical modules, transceivers and photonic components used for high-speed
+    data center connectivity.
+  includes:
+  - optical transceivers
+  - silicon photonics
+  - coherent optics
+  excludes:
+  - fiber installation
+  - carrier wavelength services
+  common_specialties:
+  - 400G optics
+  - 800G optics
+  - coherent modules
+  - silicon photonics
+  keywords:
+  - optics
+  - transceiver
+  - photonics
+  - 400G
+  - 800G
+- industry_id: DCS-L2-NET-003
+  name: Fiber, Copper & Passive Connectivity Products
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-NET
+  industry_group: Network & Connectivity
+  definition: Manufacturers and suppliers of passive fiber, copper, connectors, patching and cable-management systems.
+  includes:
+  - fiber cable
+  - copper cable
+  - patch panels
+  - MPO/MTP systems
+  excludes:
+  - structured cabling labor
+  - network switches
+  common_specialties:
+  - fiber assemblies
+  - patch cords
+  - connectors
+  - cable management
+  keywords:
+  - fiber cable
+  - copper cabling
+  - MPO
+  - MTP
+  - patch panel
+- industry_id: DCS-L2-CON-001
+  name: Carriers, Fiber & Interconnection Providers
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-NET
+  industry_group: Network & Connectivity
+  definition: Organizations providing telecommunications transport, dark fiber, wavelengths, internet transit, cross-connect
+    or interconnection services.
+  includes:
+  - dark fiber
+  - wavelength services
+  - IP transit
+  - cross-connect services
+  excludes:
+  - network hardware manufacturing
+  - inside-plant cabling installation
+  common_specialties:
+  - metro fiber
+  - long-haul transport
+  - internet exchange
+  - cross-connects
+  keywords:
+  - carrier
+  - dark fiber
+  - wavelength
+  - IP transit
+  - cross connect
+  - interconnection
+- industry_id: DCS-L2-PWR-001
+  name: Critical Power Infrastructure
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PWR
+  industry_group: Power
+  definition: Manufacturers of systems that condition, protect or maintain continuous electrical power to critical
+    data center loads.
+  includes:
+  - UPS systems
+  - static transfer switches
+  - battery backup
+  excludes:
+  - utility grid service
+  - facility electrical contracting
+  common_specialties:
+  - UPS
+  - STS
+  - battery energy storage
+  - power conditioning
+  keywords:
+  - UPS
+  - critical power
+  - static transfer switch
+  - battery backup
+- industry_id: DCS-L2-PWR-002
+  name: Electrical Distribution Equipment
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PWR
+  industry_group: Power
+  definition: Manufacturers of transformers, switchgear, busway, PDUs, RPPs and related electrical distribution
+    equipment.
+  includes:
+  - transformers
+  - switchgear
+  - busway
+  - PDUs
+  - RPPs
+  excludes:
+  - electrical installation labor
+  - utility transmission
+  common_specialties:
+  - medium-voltage gear
+  - rack PDUs
+  - floor PDUs
+  - panelboards
+  keywords:
+  - switchgear
+  - transformer
+  - busway
+  - PDU
+  - RPP
+- industry_id: DCS-L2-PWR-003
+  name: Backup Generation
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PWR
+  industry_group: Power
+  definition: Manufacturers and suppliers of standby or emergency generation systems used at data center facilities.
+  includes:
+  - diesel generators
+  - gas generators
+  - generator controls
+  excludes:
+  - utility-scale generation
+  - UPS systems
+  common_specialties:
+  - gensets
+  - generator controls
+  - fuel systems
+  keywords:
+  - generator
+  - genset
+  - backup power
+  - standby generation
+- industry_id: DCS-L2-PWR-004
+  name: Fuel Cells & On-Site Energy Systems
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PWR
+  industry_group: Power
+  definition: Manufacturers and suppliers of fuel cells and other on-site primary or supplemental energy systems
+    deployed at data centers.
+  includes:
+  - fuel cells
+  - microgrids
+  - on-site generation systems
+  excludes:
+  - utility-scale generation
+  - traditional standby-only generators
+  common_specialties:
+  - solid oxide fuel cells
+  - microgrids
+  - distributed energy
+  keywords:
+  - fuel cell
+  - microgrid
+  - on-site energy
+  - distributed generation
+- industry_id: DCS-L2-CLG-001
+  name: Air Cooling & Thermal Management
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CLG
+  industry_group: Cooling
+  definition: Manufacturers of chillers, CRAHs, CRACs, heat exchangers and other air-based data center cooling systems.
+  includes:
+  - chillers
+  - CRAH
+  - CRAC
+  - cooling towers
+  excludes:
+  - mechanical installation labor
+  - liquid-cooling-only products
+  common_specialties:
+  - free cooling
+  - air handlers
+  - rear-door heat exchangers
+  keywords:
+  - data center cooling
+  - chiller
+  - CRAH
+  - CRAC
+  - thermal management
+- industry_id: DCS-L2-CLG-002
+  name: Liquid Cooling Infrastructure
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CLG
+  industry_group: Cooling
+  definition: Manufacturers and suppliers of direct-to-chip, immersion and supporting liquid-cooling infrastructure.
+  includes:
+  - CDUs
+  - direct-to-chip cooling
+  - immersion cooling
+  excludes:
+  - traditional air-cooling-only systems
+  - mechanical contracting
+  common_specialties:
+  - manifolds
+  - cold plates
+  - immersion tanks
+  - coolant distribution
+  keywords:
+  - liquid cooling
+  - CDU
+  - direct to chip
+  - immersion
+- industry_id: DCS-L2-PHY-001
+  name: Racks, Enclosures & Containment
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PHY
+  industry_group: Physical Infrastructure
+  definition: Manufacturers and suppliers of racks, cabinets, cages and containment systems used to house IT infrastructure.
+  includes:
+  - server racks
+  - network cabinets
+  - hot-aisle containment
+  - cold-aisle containment
+  excludes:
+  - rack installation labor
+  - building structure
+  common_specialties:
+  - open-frame racks
+  - secure cages
+  - containment
+  keywords:
+  - rack
+  - cabinet
+  - enclosure
+  - containment
+- industry_id: DCS-L2-PHY-002
+  name: Raised Floor, Ceiling & White-Space Systems
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-PHY
+  industry_group: Physical Infrastructure
+  definition: Manufacturers and suppliers of modular physical systems used to organize and support the data center
+    white space.
+  includes:
+  - raised access floor
+  - ceiling grids
+  - equipment support systems
+  excludes:
+  - building structural construction
+  - rack manufacturing
+  common_specialties:
+  - access flooring
+  - ceiling systems
+  - support framing
+  keywords:
+  - raised floor
+  - access floor
+  - white space
+  - ceiling grid
+- industry_id: DCS-L2-SEC-001
+  name: Physical Security Infrastructure
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-SEC
+  industry_group: Security
+  definition: Manufacturers and suppliers of access control, surveillance, biometrics and physical security systems.
+  includes:
+  - access control
+  - biometrics
+  - video surveillance
+  - security sensors
+  excludes:
+  - cybersecurity software
+  - guard services
+  common_specialties:
+  - electronic locks
+  - CCTV
+  - identity readers
+  keywords:
+  - physical security
+  - access control
+  - biometric
+  - surveillance
+- industry_id: DCS-L2-CTL-001
+  name: BMS, EPMS & Facility Controls
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CTL
+  industry_group: Controls & Software
+  definition: Technology providers supplying building, electrical power and facility control systems used to monitor
+    and control physical infrastructure.
+  includes:
+  - BMS
+  - EPMS
+  - PLC controls
+  - facility automation
+  excludes:
+  - facility operations labor
+  - DCIM focused primarily on IT assets
+  common_specialties:
+  - power monitoring
+  - building automation
+  - controls integration
+  keywords:
+  - BMS
+  - EPMS
+  - building management
+  - facility controls
+  - PLC
+- industry_id: DCS-L2-SFT-001
+  name: DCIM & Infrastructure Management Software
+  layer_id: DCS-L2
+  primary_layer: 2
+  industry_group_id: DCS-L2-CTL
+  industry_group: Controls & Software
+  definition: Software providers whose products inventory, model, monitor or manage data center physical and IT
+    infrastructure, capacity and environmental state.
+  includes:
+  - DCIM
+  - capacity management
+  - rack visualization
+  - asset management software
+  excludes:
+  - managed operations services
+  - general ITSM
+  common_specialties:
+  - capacity planning
+  - asset visualization
+  - environmental telemetry
+  keywords:
+  - DCIM
+  - capacity management
+  - data center infrastructure management
+- industry_id: DCS-L3-LOG-001
+  name: Data Center Logistics
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LOG
+  industry_group: Logistics
+  definition: Organizations coordinating the movement, staging, delivery, tracking and lifecycle logistics of data
+    center infrastructure.
+  includes:
+  - project logistics
+  - deployment logistics
+  - asset tracking
+  - reverse logistics
+  excludes:
+  - general freight with no data center specialization
+  - equipment installation as primary service
+  common_specialties:
+  - white-glove delivery
+  - project coordination
+  - chain of custody
+  - reverse logistics
+  keywords:
+  - data center logistics
+  - project logistics
+  - deployment logistics
+  - asset tracking
+- industry_id: DCS-L3-LOG-002
+  name: Warehousing & Staging
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LOG
+  industry_group: Logistics
+  definition: Organizations providing secure storage, receiving, inventory, staging, kitting and pre-deployment
+    preparation.
+  includes:
+  - receiving
+  - staging
+  - kitting
+  - inventory holding
+  excludes:
+  - general self-storage
+  - field installation
+  common_specialties:
+  - secure storage
+  - asset staging
+  - pre-configuration staging
+  keywords:
+  - warehousing
+  - staging
+  - kitting
+  - receiving
+  - inventory
+- industry_id: DCS-L3-LOG-003
+  name: Specialized Transportation & Freight
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LOG
+  industry_group: Logistics
+  definition: Transportation providers specializing in secure, time-sensitive or high-value movement of data center
+    infrastructure.
+  includes:
+  - dedicated trucking
+  - expedited freight
+  - secure transport
+  excludes:
+  - general parcel delivery
+  - rigging inside facilities
+  common_specialties:
+  - air freight
+  - dedicated truck
+  - team drivers
+  - high-value freight
+  keywords:
+  - specialized transportation
+  - freight
+  - secure transport
+  - expedited
+- industry_id: DCS-L3-LOG-004
+  name: Rigging & Heavy Equipment Moving
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LOG
+  industry_group: Logistics
+  definition: Organizations that lift, position and move heavy infrastructure such as generators, transformers,
+    switchgear and chillers.
+  includes:
+  - rigging
+  - machinery moving
+  - crane services
+  - equipment placement
+  excludes:
+  - general trucking
+  - rack-and-stack
+  common_specialties:
+  - inside delivery
+  - heavy haul
+  - crane setting
+  - machinery placement
+  keywords:
+  - rigging
+  - machinery moving
+  - heavy equipment
+  - crane
+- industry_id: DCS-L3-LOG-005
+  name: Freight Forwarding & International Logistics
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LOG
+  industry_group: Logistics
+  definition: Organizations coordinating international transportation, customs, documentation and multimodal movement
+    of data center equipment.
+  includes:
+  - air forwarding
+  - ocean forwarding
+  - customs coordination
+  - multimodal freight
+  excludes:
+  - domestic warehousing only
+  - customs law services
+  common_specialties:
+  - international forwarding
+  - customs brokerage coordination
+  - air cargo
+  keywords:
+  - freight forwarding
+  - international logistics
+  - customs
+  - air freight
+  - ocean freight
+- industry_id: DCS-L3-INT-001
+  name: Systems Integration
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-INT
+  industry_group: Integration & Installation
+  definition: Organizations combining hardware, software, network and infrastructure components into functioning
+    data center systems.
+  includes:
+  - IT systems integration
+  - infrastructure integration
+  - solution implementation
+  excludes:
+  - product manufacturing
+  - ongoing managed operations
+  common_specialties:
+  - compute integration
+  - storage integration
+  - solution deployment
+  keywords:
+  - systems integrator
+  - integration
+  - solution implementation
+- industry_id: DCS-L3-INT-002
+  name: Network Integration & Turn-Up
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-INT
+  industry_group: Integration & Installation
+  definition: Organizations implementing, configuring, testing and turning up network infrastructure inside data
+    centers.
+  includes:
+  - switch configuration
+  - router deployment
+  - network turn-up
+  - cross-connect testing
+  excludes:
+  - carrier service itself
+  - network hardware manufacturing
+  common_specialties:
+  - BGP turn-up
+  - fabric deployment
+  - optical testing
+  keywords:
+  - network integration
+  - network deployment
+  - turn-up
+  - cross-connect testing
+- industry_id: DCS-L3-INS-001
+  name: Rack & Stack / Equipment Installation
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-INT
+  industry_group: Integration & Installation
+  definition: Service providers physically installing, racking, cabling and preparing servers, storage, network
+    and related IT equipment for service.
+  includes:
+  - rack and stack
+  - server installation
+  - network equipment installation
+  excludes:
+  - facility electrical construction
+  - ongoing smart hands
+  common_specialties:
+  - equipment labeling
+  - rack installation
+  - PDU mounting
+  keywords:
+  - rack and stack
+  - server installation
+  - equipment installation
+- industry_id: DCS-L3-INS-002
+  name: Structured Cabling Installation
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-INT
+  industry_group: Integration & Installation
+  definition: Contractors installing, terminating, testing and documenting copper and fiber structured cabling.
+  includes:
+  - fiber installation
+  - copper installation
+  - termination
+  - certification testing
+  excludes:
+  - cable manufacturing
+  - carrier fiber service
+  common_specialties:
+  - MPO installation
+  - fiber splicing
+  - cable testing
+  keywords:
+  - structured cabling
+  - fiber installation
+  - copper installation
+  - termination
+- industry_id: DCS-L3-INS-003
+  name: White-Space Buildout & Fit-Out
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-INT
+  industry_group: Integration & Installation
+  definition: Organizations completing deployable data hall or customer white-space fit-outs after the base facility
+    is available.
+  includes:
+  - cages
+  - containment fit-out
+  - ladder rack
+  - rack rows
+  - customer suite fit-out
+  excludes:
+  - base-building construction
+  - server installation only
+  common_specialties:
+  - cage buildout
+  - ladder rack
+  - overhead support
+  - customer suite buildout
+  keywords:
+  - white space buildout
+  - fit-out
+  - data hall buildout
+  - cage installation
+- industry_id: DCS-L3-LCY-001
+  name: Data Center Migration & Relocation
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LCY
+  industry_group: Lifecycle Services
+  definition: Organizations planning and executing physical relocation of production infrastructure between rooms,
+    buildings, campuses or data centers.
+  includes:
+  - server migration
+  - equipment relocation
+  - cutover logistics
+  excludes:
+  - logical cloud migration with no physical move
+  - routine freight
+  common_specialties:
+  - move planning
+  - cutover
+  - rack relocation
+  - live migration support
+  keywords:
+  - data center migration
+  - relocation
+  - server move
+  - cutover
+- industry_id: DCS-L3-LCY-002
+  name: ITAD & Asset Disposition
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LCY
+  industry_group: Lifecycle Services
+  definition: Organizations processing retired IT assets through data destruction, remarketing, recycling and disposition.
+  includes:
+  - IT asset disposition
+  - data destruction
+  - remarketing
+  - recycling
+  excludes:
+  - active asset storage
+  - routine maintenance replacement
+  common_specialties:
+  - certified destruction
+  - resale
+  - recycling
+  - chain of custody
+  keywords:
+  - ITAD
+  - asset disposition
+  - data destruction
+  - remarketing
+  - recycling
+- industry_id: DCS-L3-LCY-003
+  name: Data Center Decommissioning
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-LCY
+  industry_group: Lifecycle Services
+  definition: Organizations physically removing infrastructure and restoring space during data center exits, consolidations
+    or retirements.
+  includes:
+  - equipment deinstallation
+  - cable removal
+  - rack removal
+  - site restoration
+  excludes:
+  - ITAD processing when disposition is the primary service
+  - routine break-fix
+  common_specialties:
+  - data hall decommission
+  - suite exit
+  - cable abatement
+  keywords:
+  - decommissioning
+  - deinstallation
+  - data center exit
+  - site restoration
+- industry_id: DCS-L3-PMO-001
+  name: Deployment Project Management & Coordination
+  layer_id: DCS-L3
+  primary_layer: 3
+  industry_group_id: DCS-L3-PMO
+  industry_group: Deployment Management
+  definition: Organizations whose primary role is coordinating multi-vendor infrastructure deployment programs,
+    schedules, sites and implementation activities.
+  includes:
+  - deployment PMO
+  - implementation management
+  - rollout management
+  excludes:
+  - general construction management
+  - advisory consulting with no execution responsibility
+  common_specialties:
+  - site coordination
+  - vendor coordination
+  - program rollout
+  keywords:
+  - deployment project management
+  - implementation management
+  - rollout
+  - PMO
+- industry_id: DCS-L4-OPS-001
+  name: Retail Colocation Operators
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-OPS
+  industry_group: Data Center Operations
+  definition: Operators providing smaller-scale colocation space, power, connectivity and support directly to enterprise
+    and network customers.
+  includes:
+  - retail colocation
+  - cabinets
+  - cages
+  - cross-connect services
+  excludes:
+  - wholesale-only campuses
+  - public cloud services
+  common_specialties:
+  - single cabinets
+  - private cages
+  - interconnection-rich colo
+  keywords:
+  - retail colocation
+  - colo
+  - cabinet colocation
+  - cage colocation
+- industry_id: DCS-L4-OPS-002
+  name: Wholesale & Hyperscale Data Center Operators
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-OPS
+  industry_group: Data Center Operations
+  definition: Operators providing large-scale suites, halls or dedicated facilities to hyperscale, cloud and large
+    enterprise customers.
+  includes:
+  - wholesale colocation
+  - hyperscale campuses
+  - dedicated data halls
+  excludes:
+  - retail-only colocation
+  - developer-only companies that do not operate
+  common_specialties:
+  - powered shells under operation
+  - large suites
+  - hyperscale capacity
+  keywords:
+  - wholesale data center
+  - hyperscale data center
+  - data hall
+  - campus operator
+- industry_id: DCS-L4-OPS-003
+  name: Edge Data Center Operators
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-OPS
+  industry_group: Data Center Operations
+  definition: Operators of smaller distributed facilities positioned closer to end users, networks or localized
+    demand.
+  includes:
+  - edge facilities
+  - micro data centers
+  - regional edge sites
+  excludes:
+  - edge software platforms
+  - CDN software only
+  common_specialties:
+  - metro edge
+  - micro edge
+  - distributed facilities
+  keywords:
+  - edge data center
+  - micro data center
+  - distributed data center
+- industry_id: DCS-L4-FAC-001
+  name: Critical Environment Operations
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-FAC
+  industry_group: Facility Operations
+  definition: Providers responsible for day-to-day operation of critical electrical and mechanical facility infrastructure.
+  includes:
+  - critical facilities operations
+  - MOP/SOP execution
+  - alarm response
+  - rounds
+  excludes:
+  - facility construction
+  - equipment manufacturing
+  common_specialties:
+  - shift operations
+  - critical facilities engineering
+  - EOP execution
+  keywords:
+  - critical environment
+  - critical facilities
+  - facility operations
+  - MOP
+  - SOP
+- industry_id: DCS-L4-FAC-002
+  name: Facility Management Services
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-FAC
+  industry_group: Facility Operations
+  definition: Organizations managing the broader operational, maintenance, vendor and service functions of active
+    data center facilities.
+  includes:
+  - facility management
+  - vendor management
+  - preventive maintenance coordination
+  excludes:
+  - base building construction
+  - IT managed services
+  common_specialties:
+  - integrated facility management
+  - CMMS operations
+  - vendor coordination
+  keywords:
+  - facility management
+  - IFM
+  - data center facility services
+- industry_id: DCS-L4-FAC-003
+  name: Energy, Capacity & Efficiency Optimization
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-FAC
+  industry_group: Facility Operations
+  definition: Organizations providing ongoing optimization of power, cooling, capacity and energy performance in
+    operating data centers.
+  includes:
+  - energy optimization
+  - capacity optimization
+  - PUE improvement
+  excludes:
+  - equipment manufacturing
+  - one-time engineering design
+  common_specialties:
+  - thermal optimization
+  - power utilization
+  - capacity planning
+  keywords:
+  - energy optimization
+  - PUE
+  - capacity optimization
+  - efficiency
+- industry_id: DCS-L4-HND-001
+  name: Smart Hands & Remote Hands
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-TEC
+  industry_group: Technical Operations
+  definition: Providers performing on-demand physical technical tasks inside operating data centers for remote customers.
+  includes:
+  - remote hands
+  - smart hands
+  - reboots
+  - cable tracing
+  excludes:
+  - large deployment projects
+  - facility maintenance
+  common_specialties:
+  - component swaps
+  - visual inspection
+  - console access
+  keywords:
+  - smart hands
+  - remote hands
+  - onsite support
+  - data center technician
+- industry_id: DCS-L4-NOC-001
+  name: Network Operations & NOC Services
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-TEC
+  industry_group: Technical Operations
+  definition: Providers continuously monitoring and operating customer networks and coordinating incident response.
+  includes:
+  - NOC services
+  - network monitoring
+  - incident response
+  - availability monitoring
+  excludes:
+  - network hardware sales
+  - one-time network integration
+  common_specialties:
+  - 24x7 NOC
+  - event correlation
+  - network escalation
+  keywords:
+  - NOC
+  - network operations
+  - network monitoring
+  - 24x7 monitoring
+- industry_id: DCS-L4-MSP-001
+  name: Managed Compute Services
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-MSP
+  industry_group: Managed Infrastructure
+  definition: Providers administering servers, operating systems and compute infrastructure as an ongoing service.
+  includes:
+  - server management
+  - OS administration
+  - patching
+  - compute operations
+  excludes:
+  - public cloud IaaS
+  - one-time server deployment
+  common_specialties:
+  - Windows administration
+  - Linux administration
+  - patch management
+  keywords:
+  - managed compute
+  - managed servers
+  - server administration
+  - OS management
+- industry_id: DCS-L4-MSP-002
+  name: Managed Network Services
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-MSP
+  industry_group: Managed Infrastructure
+  definition: Providers administering switching, routing, firewalls and network infrastructure on an ongoing basis.
+  includes:
+  - managed routing
+  - managed switching
+  - managed firewall
+  - network administration
+  excludes:
+  - carrier connectivity
+  - network hardware manufacturing
+  common_specialties:
+  - configuration management
+  - network change management
+  - managed WAN
+  keywords:
+  - managed network
+  - network administration
+  - managed firewall
+  - network management
+- industry_id: DCS-L4-MSP-003
+  name: Managed Storage & Data Protection Services
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-MSP
+  industry_group: Managed Infrastructure
+  definition: Providers administering storage, backup, replication and infrastructure-level data protection systems.
+  includes:
+  - managed storage
+  - backup operations
+  - replication management
+  excludes:
+  - storage hardware sales
+  - SaaS backup applications
+  common_specialties:
+  - SAN administration
+  - backup management
+  - replication operations
+  keywords:
+  - managed storage
+  - backup management
+  - replication
+  - data protection
+- industry_id: DCS-L4-MNT-001
+  name: OEM Infrastructure Maintenance
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-MNT
+  industry_group: Maintenance
+  definition: Equipment manufacturers providing recurring field service, preventive maintenance and lifecycle support
+    for installed infrastructure.
+  includes:
+  - OEM field service
+  - preventive maintenance
+  - warranty support
+  excludes:
+  - new equipment sales alone
+  - third-party multi-vendor maintenance
+  common_specialties:
+  - factory service
+  - parts replacement
+  - service contracts
+  keywords:
+  - OEM service
+  - field service
+  - preventive maintenance
+  - warranty
+- industry_id: DCS-L4-MNT-002
+  name: Third-Party Infrastructure Maintenance
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-MNT
+  industry_group: Maintenance
+  definition: Independent service providers maintaining installed IT, power, cooling or network infrastructure across
+    multiple manufacturers.
+  includes:
+  - multi-vendor maintenance
+  - break-fix
+  - parts replacement
+  excludes:
+  - OEM-only service
+  - equipment resale alone
+  common_specialties:
+  - post-warranty support
+  - spares
+  - multi-vendor service
+  keywords:
+  - third party maintenance
+  - TPM
+  - multi-vendor maintenance
+  - break fix
+- industry_id: DCS-L4-AST-001
+  name: Asset & Inventory Operations
+  layer_id: DCS-L4
+  primary_layer: 4
+  industry_group_id: DCS-L4-AST
+  industry_group: Asset Operations
+  definition: Service providers maintaining operational asset records, rack inventory, chain of custody and lifecycle
+    status in active data centers.
+  includes:
+  - asset audits
+  - inventory reconciliation
+  - rack inventory
+  - chain of custody
+  excludes:
+  - warehouse staging
+  - ITAD disposition
+  common_specialties:
+  - asset tagging
+  - inventory audit
+  - rack elevation validation
+  keywords:
+  - asset management
+  - inventory operations
+  - asset audit
+  - inventory reconciliation
+- industry_id: DCS-L5-CLD-001
+  name: Public Cloud Infrastructure
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-CLD
+  industry_group: Cloud Infrastructure
+  definition: Providers delivering elastic compute, storage, networking and related infrastructure through shared
+    public cloud platforms.
+  includes:
+  - IaaS
+  - elastic compute
+  - cloud storage
+  - cloud networking
+  excludes:
+  - colocation
+  - enterprise SaaS
+  common_specialties:
+  - general-purpose cloud
+  - regional cloud
+  - hyperscale cloud
+  keywords:
+  - public cloud
+  - IaaS
+  - elastic compute
+  - cloud infrastructure
+- industry_id: DCS-L5-CLD-002
+  name: Private Cloud Platforms
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-CLD
+  industry_group: Cloud Infrastructure
+  definition: Platforms and providers enabling cloud-like infrastructure services within dedicated private environments.
+  includes:
+  - private cloud
+  - on-prem cloud
+  - dedicated cloud management
+  excludes:
+  - public cloud
+  - traditional virtualization alone
+  common_specialties:
+  - enterprise private cloud
+  - hosted private cloud
+  keywords:
+  - private cloud
+  - on-prem cloud
+  - dedicated cloud
+- industry_id: DCS-L5-CLD-003
+  name: Sovereign & Regulated Cloud
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-CLD
+  industry_group: Cloud Infrastructure
+  definition: Cloud providers designed around jurisdictional, regulatory, data residency or national sovereignty
+    requirements.
+  includes:
+  - sovereign cloud
+  - regulated cloud
+  - government cloud
+  excludes:
+  - general public cloud without sovereignty controls
+  common_specialties:
+  - national cloud
+  - data residency cloud
+  - regulated environments
+  keywords:
+  - sovereign cloud
+  - regulated cloud
+  - government cloud
+  - data residency
+- industry_id: DCS-L5-AIC-001
+  name: AI / GPU Cloud
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-CLD
+  industry_group: Cloud Infrastructure
+  definition: Providers delivering accelerated GPU or AI infrastructure capacity as a cloud service.
+  includes:
+  - GPU cloud
+  - AI compute cloud
+  - accelerated compute services
+  excludes:
+  - GPU hardware manufacturing
+  - AI applications
+  common_specialties:
+  - training clusters
+  - inference infrastructure
+  - GPU bare metal
+  keywords:
+  - GPU cloud
+  - AI cloud
+  - accelerated computing
+  - GPU infrastructure
+- industry_id: DCS-L5-HST-001
+  name: Bare Metal Infrastructure Services
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-HST
+  industry_group: Hosting & Infrastructure Services
+  definition: Providers delivering dedicated physical servers as rapidly consumable infrastructure services.
+  includes:
+  - bare metal cloud
+  - dedicated servers
+  - API-provisioned bare metal
+  excludes:
+  - server hardware sales
+  - retail colocation
+  common_specialties:
+  - on-demand bare metal
+  - dedicated compute
+  keywords:
+  - bare metal
+  - dedicated server
+  - bare metal cloud
+- industry_id: DCS-L5-HST-002
+  name: Managed Hosting
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-HST
+  industry_group: Hosting & Infrastructure Services
+  definition: Providers delivering hosted infrastructure together with operational management and support.
+  includes:
+  - managed hosting
+  - hosted servers
+  - managed dedicated infrastructure
+  excludes:
+  - pure colocation
+  - public cloud IaaS
+  common_specialties:
+  - managed dedicated servers
+  - hosted infrastructure
+  keywords:
+  - managed hosting
+  - hosted infrastructure
+  - dedicated hosting
+- industry_id: DCS-L5-VIR-001
+  name: Compute Virtualization Platforms
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-VIR
+  industry_group: Virtualization
+  definition: Software platforms abstracting physical compute systems into virtual machines and virtual compute
+    pools.
+  includes:
+  - hypervisors
+  - virtual machines
+  - compute virtualization
+  excludes:
+  - container orchestration
+  - public cloud
+  common_specialties:
+  - VM management
+  - hyperconverged virtualization
+  keywords:
+  - virtualization
+  - hypervisor
+  - virtual machine
+  - VM
+- industry_id: DCS-L5-VIR-002
+  name: Software-Defined Networking & Network Virtualization
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-VIR
+  industry_group: Virtualization
+  definition: Platforms abstracting and programmatically controlling network services independently of physical
+    network hardware.
+  includes:
+  - SDN
+  - network virtualization
+  - virtual networks
+  - virtual switches
+  excludes:
+  - physical switches
+  - carrier transport
+  common_specialties:
+  - overlay networks
+  - network policy
+  - virtual routing
+  keywords:
+  - SDN
+  - network virtualization
+  - virtual network
+  - software-defined networking
+- industry_id: DCS-L5-VIR-003
+  name: Software-Defined Storage
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-VIR
+  industry_group: Virtualization
+  definition: Platforms abstracting physical storage resources into software-controlled storage pools and services.
+  includes:
+  - software-defined storage
+  - distributed storage
+  - virtual storage pools
+  excludes:
+  - physical storage arrays
+  - cloud storage applications
+  common_specialties:
+  - scale-out storage
+  - storage virtualization
+  - distributed block storage
+  keywords:
+  - software-defined storage
+  - SDS
+  - storage virtualization
+- industry_id: DCS-L5-ORC-001
+  name: Container Platforms & Kubernetes
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-ORC
+  industry_group: Orchestration & Automation
+  definition: Platforms providing container runtime, cluster management and application infrastructure built around
+    containers.
+  includes:
+  - Kubernetes platforms
+  - container runtimes
+  - container management
+  excludes:
+  - application SaaS
+  - VM-only virtualization
+  common_specialties:
+  - managed Kubernetes platform software
+  - container registries
+  keywords:
+  - Kubernetes
+  - container platform
+  - container runtime
+  - K8s
+- industry_id: DCS-L5-ORC-002
+  name: Infrastructure Automation & IaC
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-ORC
+  industry_group: Orchestration & Automation
+  definition: Platforms automating infrastructure provisioning, configuration and lifecycle using code and declarative
+    workflows.
+  includes:
+  - infrastructure as code
+  - configuration automation
+  - provisioning automation
+  excludes:
+  - general CI/CD applications
+  - DCIM
+  common_specialties:
+  - IaC
+  - configuration management
+  - automated provisioning
+  keywords:
+  - infrastructure as code
+  - IaC
+  - automation
+  - provisioning
+- industry_id: DCS-L5-ORC-003
+  name: Hybrid & Multi-Cloud Management
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-ORC
+  industry_group: Orchestration & Automation
+  definition: Platforms managing policy, provisioning, visibility and operations across multiple private and public
+    cloud environments.
+  includes:
+  - multi-cloud management
+  - hybrid cloud management
+  - cloud governance
+  excludes:
+  - single public cloud infrastructure
+  - enterprise SaaS
+  common_specialties:
+  - cloud brokerage
+  - cross-cloud policy
+  - cloud cost governance
+  keywords:
+  - multi-cloud
+  - hybrid cloud
+  - cloud management
+  - cloud governance
+- industry_id: DCS-L5-EDG-001
+  name: Edge Computing Platforms
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-EDG
+  industry_group: Distributed Platforms
+  definition: Platforms distributing compute and application execution closer to users, devices or localized data
+    sources.
+  includes:
+  - edge compute
+  - distributed application platforms
+  - MEC platforms
+  excludes:
+  - edge data center facility operations
+  - CDN-only content caching
+  common_specialties:
+  - MEC
+  - far edge
+  - regional edge compute
+  keywords:
+  - edge computing
+  - MEC
+  - distributed compute
+  - edge platform
+- industry_id: DCS-L5-CDN-001
+  name: CDN & Content Delivery Infrastructure
+  layer_id: DCS-L5
+  primary_layer: 5
+  industry_group_id: DCS-L5-EDG
+  industry_group: Distributed Platforms
+  definition: Platforms distributing and caching digital content across geographically distributed infrastructure
+    for performance and resilience.
+  includes:
+  - content delivery networks
+  - edge caching
+  - traffic acceleration
+  excludes:
+  - consumer media applications
+  - carrier transport
+  common_specialties:
+  - web acceleration
+  - edge caching
+  - content delivery
+  keywords:
+  - CDN
+  - content delivery network
+  - edge caching
+  - web acceleration
+- industry_id: DCS-L6-AI-001
+  name: Foundation Model Providers
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-AI
+  industry_group: Artificial Intelligence
+  definition: Organizations developing and operating large general-purpose AI models as a primary digital product
+    or service.
+  includes:
+  - large language models
+  - multimodal foundation models
+  - model APIs
+  excludes:
+  - GPU cloud providers
+  - AI chip manufacturers
+  common_specialties:
+  - LLMs
+  - multimodal models
+  - model APIs
+  keywords:
+  - foundation model
+  - LLM
+  - large language model
+  - model API
+- industry_id: DCS-L6-AI-002
+  name: AI Applications & Agents
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-AI
+  industry_group: Artificial Intelligence
+  definition: Providers of end-user or enterprise applications whose primary functionality is powered by AI models
+    or autonomous agents.
+  includes:
+  - AI assistants
+  - AI agents
+  - vertical AI applications
+  excludes:
+  - foundation model infrastructure
+  - general SaaS with incidental AI
+  common_specialties:
+  - enterprise agents
+  - coding assistants
+  - AI copilots
+  keywords:
+  - AI application
+  - AI agent
+  - copilot
+  - assistant
+- industry_id: DCS-L6-AI-003
+  name: AI Inference Services
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-AI
+  industry_group: Artificial Intelligence
+  definition: Providers delivering production-scale model inference, serving or AI execution as a specialized service.
+  includes:
+  - model inference APIs
+  - inference serving
+  - AI execution services
+  excludes:
+  - GPU infrastructure rental
+  - foundation model development
+  common_specialties:
+  - low-latency inference
+  - model serving
+  - inference endpoints
+  keywords:
+  - AI inference
+  - model serving
+  - inference API
+- industry_id: DCS-L6-HPC-001
+  name: HPC & Scientific Computing
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-AI
+  industry_group: Artificial Intelligence
+  definition: Organizations operating compute-intensive scientific, engineering, simulation or research workloads.
+  includes:
+  - scientific computing
+  - simulation
+  - weather modeling
+  - research HPC
+  excludes:
+  - general enterprise applications
+  - AI model providers
+  common_specialties:
+  - computational science
+  - simulation
+  - research clusters
+  keywords:
+  - HPC
+  - high performance computing
+  - scientific computing
+  - simulation
+- industry_id: DCS-L6-SAA-001
+  name: Enterprise SaaS
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-APP
+  industry_group: Enterprise Applications
+  definition: Providers of general enterprise software applications delivered as digital services.
+  includes:
+  - CRM
+  - ERP
+  - HR software
+  - business workflow SaaS
+  excludes:
+  - cloud infrastructure
+  - infrastructure management software
+  common_specialties:
+  - business applications
+  - workflow platforms
+  - enterprise productivity
+  keywords:
+  - SaaS
+  - enterprise application
+  - CRM
+  - ERP
+- industry_id: DCS-L6-COL-001
+  name: Collaboration & Productivity Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-APP
+  industry_group: Enterprise Applications
+  definition: Providers of messaging, collaboration, office productivity and workplace communication applications.
+  includes:
+  - team messaging
+  - video collaboration
+  - office productivity
+  excludes:
+  - telecommunications transport
+  - general enterprise SaaS
+  common_specialties:
+  - video meetings
+  - document collaboration
+  - workplace chat
+  keywords:
+  - collaboration
+  - productivity
+  - messaging
+  - video conferencing
+- industry_id: DCS-L6-DAT-001
+  name: Database & Data Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-DAT
+  industry_group: Data & Analytics
+  definition: Providers whose primary service is database, data warehouse, data lake or managed data platform functionality.
+  includes:
+  - database services
+  - data warehouses
+  - data lake platforms
+  excludes:
+  - physical storage hardware
+  - general cloud IaaS
+  common_specialties:
+  - relational database
+  - NoSQL
+  - lakehouse
+  - warehouse
+  keywords:
+  - database platform
+  - data warehouse
+  - data lake
+  - lakehouse
+- industry_id: DCS-L6-ANA-001
+  name: Analytics & Business Intelligence Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-DAT
+  industry_group: Data & Analytics
+  definition: Providers of large-scale analytics, visualization and business intelligence applications.
+  includes:
+  - BI platforms
+  - analytics applications
+  - data visualization
+  excludes:
+  - database infrastructure
+  - AI foundation models
+  common_specialties:
+  - dashboards
+  - enterprise analytics
+  - decision intelligence
+  keywords:
+  - analytics platform
+  - business intelligence
+  - BI
+  - data visualization
+- industry_id: DCS-L6-CYB-001
+  name: Cybersecurity Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-APP
+  industry_group: Enterprise Applications
+  definition: Providers of digital security applications and services protecting identities, endpoints, networks,
+    applications or data.
+  includes:
+  - identity security
+  - endpoint security
+  - SIEM
+  - application security
+  excludes:
+  - physical security systems
+  - managed network operations
+  common_specialties:
+  - zero trust
+  - EDR
+  - SIEM
+  - IAM
+  keywords:
+  - cybersecurity
+  - SIEM
+  - EDR
+  - identity security
+  - zero trust
+- industry_id: DCS-L6-MED-001
+  name: Streaming Media Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-MED
+  industry_group: Media & Consumer Platforms
+  definition: Providers delivering large-scale video, audio or live-streaming services to consumers or enterprises.
+  includes:
+  - video streaming
+  - audio streaming
+  - live streaming
+  excludes:
+  - CDN infrastructure
+  - broadcast equipment manufacturing
+  common_specialties:
+  - OTT video
+  - music streaming
+  - live events
+  keywords:
+  - streaming
+  - OTT
+  - video platform
+  - audio streaming
+- industry_id: DCS-L6-GAM-001
+  name: Online Gaming Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-MED
+  industry_group: Media & Consumer Platforms
+  definition: Providers operating online multiplayer, cloud gaming or game-service workloads at scale.
+  includes:
+  - multiplayer gaming
+  - cloud gaming
+  - game backends
+  excludes:
+  - gaming hardware
+  - general content delivery infrastructure
+  common_specialties:
+  - game servers
+  - MMO platforms
+  - cloud gaming
+  keywords:
+  - online gaming
+  - cloud gaming
+  - game platform
+  - game servers
+- industry_id: DCS-L6-SOC-001
+  name: Social & Community Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-MED
+  industry_group: Media & Consumer Platforms
+  definition: Providers operating large-scale social networks, communities, messaging or user-generated content
+    platforms.
+  includes:
+  - social networks
+  - community platforms
+  - consumer messaging
+  excludes:
+  - enterprise collaboration platforms
+  - carrier messaging transport
+  common_specialties:
+  - user-generated content
+  - social feeds
+  - community services
+  keywords:
+  - social media
+  - social platform
+  - community platform
+  - consumer messaging
+- industry_id: DCS-L6-ECM-001
+  name: E-Commerce & Marketplace Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-MED
+  industry_group: Media & Consumer Platforms
+  definition: Providers operating large-scale digital commerce, marketplace or retail transaction platforms.
+  includes:
+  - e-commerce
+  - online marketplaces
+  - digital retail platforms
+  excludes:
+  - payment processors
+  - physical retail operations alone
+  common_specialties:
+  - marketplaces
+  - digital storefronts
+  - commerce engines
+  keywords:
+  - e-commerce
+  - marketplace
+  - online retail
+  - commerce platform
+- industry_id: DCS-L6-FIN-001
+  name: Payments & Transaction Processing
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-FIN
+  industry_group: Financial Computing
+  definition: Providers operating digital payment, settlement or high-volume financial transaction processing platforms.
+  includes:
+  - payment networks
+  - payment gateways
+  - transaction processors
+  excludes:
+  - general banks as infrastructure consumers
+  - trading platforms
+  common_specialties:
+  - merchant payments
+  - card processing
+  - settlement
+  keywords:
+  - payments
+  - transaction processing
+  - payment gateway
+  - settlement
+- industry_id: DCS-L6-FIN-002
+  name: Electronic Trading & Market Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-FIN
+  industry_group: Financial Computing
+  definition: Providers operating electronic exchanges, trading systems, market data or latency-sensitive financial
+    platforms.
+  includes:
+  - electronic exchanges
+  - trading platforms
+  - market data systems
+  excludes:
+  - general banking applications
+  - payment processing
+  common_specialties:
+  - low-latency trading
+  - exchange platforms
+  - market data
+  keywords:
+  - electronic trading
+  - exchange
+  - market data
+  - trading platform
+- industry_id: DCS-L6-IND-001
+  name: Industry-Specific Digital Platforms
+  layer_id: DCS-L6
+  primary_layer: 6
+  industry_group_id: DCS-L6-IND
+  industry_group: Industry Workloads
+  definition: Providers operating large-scale digital platforms tailored to sectors such as healthcare, telecommunications,
+    transportation, education or government.
+  includes:
+  - healthcare platforms
+  - telecom applications
+  - research platforms
+  - government digital services
+  excludes:
+  - ordinary enterprises merely consuming IT infrastructure
+  - general enterprise SaaS
+  common_specialties:
+  - healthtech
+  - edtech
+  - govtech
+  - telecom software
+  - mobility platforms
+  keywords:
+  - industry platform
+  - healthcare platform
+  - govtech
+  - edtech
+  - telecom platform
+ecosystem_enablers:
+- enabler_id: DCS-EN-CNS-001
+  name: Consulting & Advisory
+  definition: Organizations providing strategic, operational or technical advisory services to data center market
+    participants.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-FIN-001
+  name: Investment, Finance & Capital
+  definition: Organizations financing, investing in or underwriting data center projects, companies or infrastructure.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-INS-001
+  name: Insurance & Risk
+  definition: Organizations providing insurance, brokerage and risk-transfer services to the data center ecosystem.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-LEG-001
+  name: Legal Services
+  definition: Law firms and legal service providers supporting data center transactions, development, operations
+    or regulation.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-TAL-001
+  name: Recruiting & Workforce
+  definition: Organizations supplying recruiting, staffing or workforce services to data center companies.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-EDU-001
+  name: Education & Training
+  definition: Organizations providing professional training, curriculum or workforce development for data center
+    roles.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-CER-001
+  name: Certification & Accreditation
+  definition: Organizations issuing professional, facility or technical certifications and accreditations.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-STD-001
+  name: Standards & Research
+  definition: Organizations producing technical standards, research, benchmarks or industry guidance.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-ASS-001
+  name: Trade Associations
+  definition: Membership organizations representing data center, technology, energy or infrastructure participants.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-MED-001
+  name: Media & Publishing
+  definition: Organizations reporting on, analyzing or publishing information about the data center industry.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-EVT-001
+  name: Events & Conferences
+  definition: Organizations producing data center conferences, summits, exhibitions or professional gatherings.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-GOV-001
+  name: Government & Economic Development
+  definition: Government agencies and economic development organizations supporting, regulating or attracting data
+    center activity.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-ENV-001
+  name: Environmental & Sustainability Advisory
+  definition: Organizations advising on environmental impact, sustainability, carbon, water or reporting requirements.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-SEC-001
+  name: Security Guard & Protective Services
+  definition: Organizations providing human physical-security and protective services at data center facilities.
+  relationship_to_stack: Ecosystem Enabler
+- enabler_id: DCS-EN-PRC-001
+  name: Procurement & Sourcing Advisory
+  definition: Organizations providing sourcing, procurement, vendor management or supply-chain advisory services
+    without directly supplying Stack infrastructure.
+  relationship_to_stack: Ecosystem Enabler
