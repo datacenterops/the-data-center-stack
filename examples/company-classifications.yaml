@@ -1,0 +1,81 @@
+examples:
+- company: DatacenterOps
+  example_status: illustrative
+  relationship_to_stack: Stack Participant
+  primary_industry_id: DCS-L3-INS-001
+  primary_industry: Rack & Stack / Equipment Installation
+  primary_layer: 3
+  primary_layer_name: Deployment
+  secondary_industry_ids:
+  - DCS-L3-LOG-001
+  - DCS-L3-LCY-001
+  - DCS-L3-LCY-003
+  - DCS-L4-HND-001
+  specialties:
+  - rack and stack
+  - infrastructure deployment
+  - data center logistics
+  - migration and relocation
+  - decommissioning
+  - smart hands
+  confidence: High
+  reason: Its primary data center function is deploying IT infrastructure inside data centers, with additional material
+    functions in logistics, migrations, decommissioning and smart hands.
+- company: NVIDIA
+  example_status: illustrative
+  relationship_to_stack: Stack Participant
+  primary_industry_id: DCS-L2-CMP-003
+  primary_industry: Semiconductors & Accelerators
+  primary_layer: 2
+  primary_layer_name: Infrastructure
+  secondary_industry_ids: []
+  specialties:
+  - GPUs
+  - AI accelerators
+  - data center processors
+  confidence: High
+  reason: Its core data center role is supplying compute silicon and accelerators rather than operating the workloads
+    that consume them.
+- company: Equinix
+  example_status: illustrative
+  relationship_to_stack: Stack Participant
+  primary_industry_id: DCS-L4-OPS-001
+  primary_industry: Retail Colocation Operators
+  primary_layer: 4
+  primary_layer_name: Operations
+  secondary_industry_ids:
+  - DCS-L2-CON-001
+  specialties:
+  - colocation
+  - interconnection
+  - cross-connect services
+  confidence: High
+  reason: Its core data center function is operating colocation facilities, with interconnection as an additional
+    material service.
+- company: CoreWeave
+  example_status: illustrative
+  relationship_to_stack: Stack Participant
+  primary_industry_id: DCS-L5-AIC-001
+  primary_industry: AI / GPU Cloud
+  primary_layer: 5
+  primary_layer_name: Platform
+  secondary_industry_ids: []
+  specialties:
+  - GPU cloud
+  - accelerated compute
+  confidence: High
+  reason: Its primary market function is making accelerated compute capacity consumable as a cloud platform.
+- company: OpenAI
+  example_status: illustrative
+  relationship_to_stack: Stack Participant
+  primary_industry_id: DCS-L6-AI-001
+  primary_industry: Foundation Model Providers
+  primary_layer: 6
+  primary_layer_name: Workloads
+  secondary_industry_ids:
+  - DCS-L6-AI-002
+  specialties:
+  - foundation models
+  - AI applications
+  confidence: High
+  reason: Its primary digital products are AI models and applications that consume platform and infrastructure capacity.
