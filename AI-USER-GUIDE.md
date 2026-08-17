@@ -6,7 +6,7 @@
 
 ![The Data Center Stack Industry Taxonomy AI User Guide](ai-user-guide-preview.png)
 
-*Prefer the interactive version? See [`ai-user-guide.html`](ai-user-guide.html) (or the live [GitHub Pages](https://datacenterops.github.io/data-center-stack-taxonomy/ai-user-guide.html) link once Pages is enabled).*
+Prefer the interactive version? See https://datacenterops.github.io/the-data-center-stack/ai-user-guide.html
 
 How to use the taxonomy with AI to get real answers.
 
