@@ -11,7 +11,7 @@ An open framework and taxonomy for understanding how the data center industry fi
 [View HTML Source](./the-data-center-stack-v1-0.html)
 
 ---
-Where to start section · MD
+
 ## Where to Start
  
 New to GitHub or just want the fastest path to what you need? Use this table.
@@ -19,8 +19,8 @@ New to GitHub or just want the fastest path to what you need? Use this table.
 | I want to... | Go to |
 |---|---|
 | See the framework at a glance | [the-data-center-stack-v1-0.png](the-data-center-stack-v1-0.png) |
-| Read the full write-up of the framework | [the-data-center-stack-v1-0.html](the-data-center-stack-v1-0.html) |
-| Have an AI tool or LLM work with the taxonomy | [ai-user-guide.html](ai-user-guide.html) |
+| Read the full write-up of the framework | [the-data-center-stack-v1-0.html](https://datacenterops.github.io/the-data-center-stack/the-data-center-stack-v1-0.html) |
+| Have an AI tool or LLM work with the taxonomy | [ai-user-guide.html](https://datacenterops.github.io/the-data-center-stack/ai-user-guide.html) |
 | Browse or classify companies against the taxonomy | [taxonomy/](taxonomy) |
 | See the taxonomy applied to real-world data | [examples/](examples) |
 | Understand the licensing terms | [LICENSE](LICENSE) |
