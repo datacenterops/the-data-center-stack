@@ -129,6 +129,6 @@ Companies:
 
 ---
 
-**GitHub:** https://github.com/datacenterops/data-center-stack-taxonomy
+**GitHub:** https://github.com/datacenterops/data-center-stack
 
 Questions or feedback? Open an issue or start a discussion.
