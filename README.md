@@ -177,7 +177,7 @@ The repository contains:
 
 - **The Data Center Stack v1.0** visual framework
 - **Taxonomy** with structured industry classifications
-- **YAML and CSV data** for machine-readable use
+- **YAML, JSON and CSV data** for machine-readable use
 - **PNG, PDF and HTML** versions of the framework
 - **Documentation** explaining the methodology and classification approach
 
