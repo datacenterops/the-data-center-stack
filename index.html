@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Data Center Stack: An Open Framework for the Data Center Ecosystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F141B;
+    --surface: #1A212B;
+    --surface-raised: #212A36;
+    --hairline: #2B3542;
+    --paper: #F4F1EA;
+    --paper-dim: #9AA5B4;
+    --amber: #FFA936;
+    --amber-dim: #C77F1F;
+
+    /* six-layer ramp, bottom (Foundation) cool -> top (Workloads) warm */
+    --l1: #2E5C8A; /* Foundation */
+    --l2: #3E76A8; /* Infrastructure */
+    --l3: #4A93A8; /* Deployment */
+    --l4: #6EA680; /* Operations */
+    --l5: #C99A4E; /* Platform */
+    --l6: #E0863A; /* Workloads */
+
+    --display: 'Barlow Condensed', sans-serif;
+    --body: 'Inter', sans-serif;
+    --utility: 'Archivo', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: var(--utility);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .wordmark span { color: var(--amber); }
+  header nav a {
+    font-family: var(--utility);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper-dim);
+    border: 1px solid var(--hairline);
+    padding: 8px 16px;
+    border-radius: 3px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  header nav a:hover { border-color: var(--amber); color: var(--paper); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 72px 0 56px;
+  }
+  .eyebrow {
+    font-family: var(--utility);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    margin-bottom: 22px;
+    max-width: 14ch;
+  }
+  .lede {
+    font-size: 18px;
+    color: var(--paper-dim);
+    max-width: 52ch;
+    margin-bottom: 8px;
+  }
+  .lede strong { color: var(--paper); font-weight: 600; }
+
+  /* ---------- Stack visual ---------- */
+  .stack-section {
+    padding: 24px 0 64px;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column-reverse; /* Foundation renders at bottom */
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .layer {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: stretch;
+    min-height: 74px;
+    border-top: 1px solid rgba(15,20,27,0.35);
+    cursor: default;
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+  .layer:first-child { border-top: none; }
+  .layer:hover { filter: brightness(1.12); }
+  .layer-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(15,20,27,0.55);
+    border-right: 1px solid rgba(15,20,27,0.25);
+  }
+  .layer-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 22px;
+    color: #10141A;
+  }
+  .layer-name {
+    font-family: var(--utility);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  .layer-desc {
+    font-size: 13.5px;
+    color: rgba(15,20,27,0.72);
+    margin-top: 2px;
+  }
+  .l1 { background: var(--l1); } .l1 .layer-num { color: rgba(255,255,255,0.55); } .l1 .layer-body { color: #F4F1EA; } .l1 .layer-desc { color: rgba(244,241,234,0.7); }
+  .l2 { background: var(--l2); } .l2 .layer-num { color: rgba(255,255,255,0.55); } .l2 .layer-body { color: #F4F1EA; } .l2 .layer-desc { color: rgba(244,241,234,0.7); }
+  .l3 { background: var(--l3); } .l3 .layer-num { color: rgba(255,255,255,0.55); } .l3 .layer-body { color: #F4F1EA; } .l3 .layer-desc { color: rgba(244,241,234,0.7); }
+  .l4 { background: var(--l4); }
+  .l5 { background: var(--l5); }
+  .l6 { background: var(--l6); }
+
+  .stack-caption {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-family: var(--utility);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+  }
+
+  /* ---------- Where to start ---------- */
+  .start-section {
+    padding: 8px 0 80px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 16px;
+  }
+  .section-head h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 32px;
+  }
+  .section-head p {
+    font-size: 13.5px;
+    color: var(--paper-dim);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  @media (max-width: 760px) {
+    .card-grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: var(--surface);
+    padding: 26px 24px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background 0.15s ease;
+  }
+  .card:hover { background: var(--surface-raised); }
+  .card:hover .card-cta { color: var(--amber); }
+
+  .card-tag {
+    font-family: var(--utility);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+  }
+  .card-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--paper);
+    line-height: 1.15;
+  }
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--paper-dim);
+    flex-grow: 1;
+  }
+  .card-cta {
+    font-family: var(--utility);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--paper-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    transition: color 0.15s ease;
+  }
+  .card-cta svg { width: 12px; height: 12px; transition: transform 0.15s ease; }
+  .card:hover .card-cta svg { transform: translateX(3px); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 1px solid var(--hairline);
+    padding: 28px 0 40px;
+  }
+  footer .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p {
+    font-size: 12.5px;
+    color: var(--paper-dim);
+  }
+  footer a { text-decoration: underline; text-underline-offset: 3px; color: var(--paper-dim); }
+  footer a:hover { color: var(--paper); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="wordmark" href="#">The Data Center <span>Stack</span></a>
+    <nav>
+      <a href="https://github.com/datacenterops/the-data-center-stack" target="_blank" rel="noopener">View Source on GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">An Open Framework &amp; Taxonomy</div>
+    <h1>Six layers. One map of the data center ecosystem.</h1>
+    <p class="lede">From concrete to compute, <strong>The Data Center Stack</strong> maps the functions that make up the industry, not the companies inside it. Free to use, adapt, and cite under <strong>CC BY&nbsp;4.0</strong>.</p>
+  </div>
+</section>
+
+<section class="stack-section">
+  <div class="wrap">
+    <div class="stack">
+      <div class="layer l1">
+        <div class="layer-num">1</div>
+        <div class="layer-body">
+          <div class="layer-name">Foundation</div>
+          <div class="layer-desc">Land, power procurement, water rights, permitting, entitlement</div>
+        </div>
+      </div>
+      <div class="layer l2">
+        <div class="layer-num">2</div>
+        <div class="layer-body">
+          <div class="layer-name">Infrastructure</div>
+          <div class="layer-desc">Building shell, electrical & cooling systems, connectivity backbone</div>
+        </div>
+      </div>
+      <div class="layer l3">
+        <div class="layer-num">3</div>
+        <div class="layer-body">
+          <div class="layer-name">Deployment</div>
+          <div class="layer-desc">Rack &amp; stack, structured cabling, systems integration, migration &amp; relocation</div>
+        </div>
+      </div>
+      <div class="layer l4">
+        <div class="layer-num">4</div>
+        <div class="layer-body">
+          <div class="layer-name">Operations</div>
+          <div class="layer-desc">Facility management, monitoring, security, maintenance</div>
+        </div>
+      </div>
+      <div class="layer l5">
+        <div class="layer-num">5</div>
+        <div class="layer-body">
+          <div class="layer-name">Platform</div>
+          <div class="layer-desc">Virtualization, orchestration, managed infrastructure services</div>
+        </div>
+      </div>
+      <div class="layer l6">
+        <div class="layer-num">6</div>
+        <div class="layer-body">
+          <div class="layer-name">Workloads</div>
+          <div class="layer-desc">The applications and business logic running on top</div>
+        </div>
+      </div>
+    </div>
+    <div class="stack-caption">
+      <span>01 · Foundation: where it starts</span>
+      <span>06 · Workloads: what it's for</span>
+    </div>
+  </div>
+</section>
+
+<section class="start-section" id="start">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Where to start</h2>
+      <p>No GitHub account needed. Every link below opens straight in your browser.</p>
+    </div>
+    <div class="card-grid">
+
+      <a class="card" href="the-data-center-stack-v1-0.png" target="_blank" rel="noopener">
+        <div class="card-tag">Image</div>
+        <div class="card-title">See the framework at a glance</div>
+        <div class="card-desc">The full six-layer diagram as a single image, the fastest way to understand the shape of it.</div>
+        <div class="card-cta">Open image <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+      <a class="card" href="the-data-center-stack-v1-0.html" target="_blank" rel="noopener">
+        <div class="card-tag">Article</div>
+        <div class="card-title">Read the full write-up</div>
+        <div class="card-desc">The complete explanation of the framework: why six layers, how they interact, and what each one means.</div>
+        <div class="card-cta">Read the write-up <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+      <a class="card" href="ai-user-guide.html" target="_blank" rel="noopener">
+        <div class="card-tag">For AI Tools</div>
+        <div class="card-title">Put an AI tool to work with it</div>
+        <div class="card-desc">A guide for feeding this taxonomy into an LLM, to classify a list of companies, a conference roster, or your own data.</div>
+        <div class="card-cta">Open the guide <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+      <a class="card" href="https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy" target="_blank" rel="noopener">
+        <div class="card-tag">Reference</div>
+        <div class="card-title">Browse the taxonomy</div>
+        <div class="card-desc">The full list of 88 industries across all six layers, in case you need to classify a specific company or function.</div>
+        <div class="card-cta">Browse on GitHub <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+      <a class="card" href="https://github.com/datacenterops/the-data-center-stack/tree/main/examples" target="_blank" rel="noopener">
+        <div class="card-tag">Applied</div>
+        <div class="card-title">See it applied to real data</div>
+        <div class="card-desc">Worked examples of the taxonomy classifying real conference and vendor datasets.</div>
+        <div class="card-cta">View examples <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+      <a class="card" href="https://github.com/datacenterops/the-data-center-stack" target="_blank" rel="noopener">
+        <div class="card-tag">Developers</div>
+        <div class="card-title">Get the source &amp; license</div>
+        <div class="card-desc">Clone the repo, check version history, or read the CC BY 4.0 license terms.</div>
+        <div class="card-cta">View repository <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>The Data Center Stack is licensed under <a href="https://github.com/datacenterops/the-data-center-stack/blob/main/LICENSE" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
+    <p>Maintained by <a href="https://github.com/datacenterops" target="_blank" rel="noopener">DatacenterOps</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
