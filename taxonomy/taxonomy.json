@@ -47,28 +47,28 @@
       "layer_id": "DCS-L3",
       "number": 3,
       "name": "Deployment",
-      "function": "Deploy",
+      "function": "Install",
       "definition": "Deploy, integrate, migrate, upgrade, relocate and retire infrastructure across its lifecycle."
     },
     {
       "layer_id": "DCS-L4",
       "number": 4,
       "name": "Operations",
-      "function": "Operate",
+      "function": "Run",
       "definition": "Monitor, secure, maintain and optimize production infrastructure for reliability and uptime."
     },
     {
       "layer_id": "DCS-L5",
       "number": 5,
       "name": "Platform",
-      "function": "Abstract",
+      "function": "Provision",
       "definition": "Turn physical infrastructure into consumable capacity through virtualization, orchestration and cloud services."
     },
     {
       "layer_id": "DCS-L6",
       "number": 6,
       "name": "Workloads",
-      "function": "Run",
+      "function": "Consume",
       "definition": "Applications, services and digital workloads that consume platform and infrastructure capacity."
     }
   ],
