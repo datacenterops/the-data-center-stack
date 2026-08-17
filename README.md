@@ -192,7 +192,7 @@ The taxonomy is designed to work directly inside AI tools like ChatGPT, Claude, 
 
 **[AI User Guide](AI-USER-GUIDE.md)** walks through four ready-to-use prompts for classifying companies, analyzing a dataset, mapping customers and competitors, and finding market opportunities. Each prompt has the taxonomy link built in, so there's no need to paste the taxonomy manually.
 
-**[View the interactive guide](ai-user-guide.html)** for the same content in a formatted, shareable page.
+**[View the interactive guide](https://datacenterops.github.io/the-data-center-stack/ai-user-guide.html)** for the same content in a formatted, shareable page.
 
 ## Project Structure
 
