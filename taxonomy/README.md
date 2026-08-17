@@ -6,7 +6,7 @@ It extends [The Data Center Stack](../README.md) from a six-layer conceptual fra
 
 ## Current version
 
-**v0.1.0 — Draft**
+**v0.1.0 - Draft**
 
 This draft is intended for testing and validation before the first stable release.
 
@@ -22,12 +22,12 @@ The current draft contains **88 core industry definitions** across the six layer
 
 | Layer | Function | Industries |
 |---|---|---:|
-| 1 — Foundation | Build | 12 |
-| 2 — Infrastructure | Supply | 18 |
-| 3 — Deployment | Install | 14 |
-| 4 — Operations | Run | 14 |
-| 5 — Platform | Provision | 14 |
-| 6 — Workloads | Consume | 16 |
+| 1 - Foundation | Build | 12 |
+| 2 - Infrastructure | Supply | 18 |
+| 3 - Deployment | Install | 14 |
+| 4 - Operations | Run | 14 |
+| 5 - Platform | Provision | 14 |
+| 6 - Workloads | Consume | 16 |
 
 The taxonomy also contains **15 Ecosystem Enabler classifications** for organizations such as consulting firms, financial institutions, associations, media, training providers, government organizations, and other participants that support the ecosystem without directly performing a Layer 1–6 function.
 
