@@ -1,6 +1,6 @@
 # The Data Center Stack
 
-A community framework for understanding the data center industry.
+An open framework and taxonomy for understanding how the data center industry fits together.
 
 ![The Data Center Stack v1.0](./the-data-center-stack-v1-0.png)
 
@@ -14,203 +14,225 @@ A community framework for understanding the data center industry.
 
 ## Overview
 
-The data center industry is highly interconnected, yet there has never been a simple, shared framework for explaining how its major functions fit together.
+The data center industry is highly interconnected, but there is no simple, shared framework for explaining how its major functions fit together.
 
-The Data Center Stack organizes those functions into six layers, progressing from the physical facility at the foundation to the digital workloads that ultimately consume the infrastructure.
+The Data Center Stack organizes the industry into six functional layers, moving from the physical facility at the base to the applications and digital services at the top.
 
-The framework is not intended to classify companies. Most organizations operate across multiple layers.
+The goal is not to classify companies into a single box. Most organizations operate across several layers.
 
-Instead, it provides a common language that helps customers, technicians, project managers, executives, partners, students, and experienced professionals communicate more clearly about the industry.
+The goal is to create a common language for understanding the ecosystem, the dependencies between different parts of the industry, and where companies, technologies, services and people fit within it.
 
----
+The project consists of two connected parts:
+
+- **The Data Center Stack Framework** provides the simple six-layer model.
+- **The Data Center Stack Taxonomy** provides a structured classification system for mapping the industries and specialties operating across those layers.
+
+Together, they provide both a high-level view of the industry and a way to explore the ecosystem in much greater detail.
 
 ## The Six Layers
 
 ### 1. Foundation
 
-**Function:** Build
+**Function: Build**
 
-Land, power, water, structure, and the physical facility everything else depends on.
+Land, power, water, structure and the physical facility everything else depends on.
 
-**Typical participants**
-
-- Utilities
-- Developers
-- General contractors and MEP firms
-
----
+**Who operates here:** Developers, utilities, engineering firms, general contractors, construction companies and data center operators.
 
 ### 2. Infrastructure
 
-**Function:** Supply
+**Function: Supply**
 
-The physical and digital building blocks: compute, storage, network, power, cooling, connectivity, security, and software.
+The physical and digital building blocks: compute, storage, network, power, cooling, connectivity, security and software.
 
-**Typical participants**
-
-- OEMs and software vendors
-- Distributors
-- Carriers
-
----
+**Who operates here:** Equipment manufacturers, technology vendors, carriers, distributors and infrastructure suppliers.
 
 ### 3. Deployment
 
-**Function:** Install
+**Function: Install**
 
-Receive, stage, install, integrate, relocate, and decommission infrastructure across its lifecycle.
+Deploy, integrate, migrate, upgrade, relocate and retire infrastructure across its lifecycle.
 
-**Typical participants**
-
-- Field services and smart hands
-- Integrators and logistics providers
-- ITAD and decommissioning firms
-
----
+**Who operates here:** Field services and smart hands providers, integrators and logistics providers, ITAD and decommissioning firms.
 
 ### 4. Operations
 
-**Function:** Run
+**Function: Run**
 
-The continuous work that keeps production infrastructure reliable and available through monitoring, maintenance, security, and optimization.
+Monitor, secure, maintain and optimize production infrastructure for reliability and uptime.
 
-**Typical participants**
-
-- Colocation providers
-- Enterprise IT and MSPs
-- NOC and SOC teams
-
----
+**Who operates here:** Data center operations teams, managed service providers, network operations teams, security providers and maintenance organizations.
 
 ### 5. Platform
 
-**Function:** Provision
+**Function: Provision**
 
-The abstraction layer that makes physical infrastructure consumable through virtualization, orchestration, and cloud services.
+Turn physical infrastructure into consumable capacity through virtualization, orchestration and cloud services.
 
-**Typical participants**
-
-- Cloud providers and hyperscalers
-- Enterprise IT
-- Managed hosting providers
-
----
+**Who operates here:** Cloud providers, hosting companies, virtualization platforms, orchestration providers and infrastructure software companies.
 
 ### 6. Workloads
 
-**Function:** Consume
+**Function: Consume**
 
-Applications, AI, SaaS, and enterprise services that generate business value.
+Applications, data and digital services that create demand for everything below them.
 
-**Typical participants**
+**Who operates here:** Enterprises, SaaS companies, AI platforms, content providers, financial services, government organizations and other users of digital infrastructure.
 
-- SaaS and content companies
-- AI companies
-- Enterprise business units
+## The Industry Taxonomy
 
----
+The six layers provide the high-level model. The **Data Center Stack Taxonomy** extends that model into a structured classification system for the broader data center ecosystem.
+
+The taxonomy follows a hierarchy:
+
+**Stack Layer → Industry Group → Industry → Specialty**
+
+The current taxonomy includes more than 80 core industry definitions along with Ecosystem Enablers that influence the industry without fitting cleanly into one operational layer.
+
+Each industry can include structured information such as:
+
+- Permanent identifiers
+- Definitions
+- Inclusion and exclusion criteria
+- Specialties
+- Keywords
+- Classification rules
+
+The taxonomy is designed to be understandable by people while also being structured enough for software, datasets and AI systems.
+
+**[Explore the Data Center Stack Taxonomy](./taxonomy/)**
+
+The canonical taxonomy is maintained in YAML, with additional machine-readable formats derived from that source.
+
+## Why It Matters
+
+The data center industry is often described through individual markets, technologies or company categories.
+
+Construction sees one ecosystem. Power sees another. Networking, logistics, operations, cloud and AI each see different parts of the same system.
+
+The Data Center Stack provides a common reference point.
+
+### Understand the ecosystem
+
+The six-layer model provides a simple way to see how physical facilities ultimately become digital workloads and services.
+
+### Create a common language
+
+A shared framework makes it easier for people working in different parts of the industry to communicate without assuming everyone sees the ecosystem the same way.
+
+### Identify relationships
+
+The taxonomy makes it possible to explore where industries overlap and identify potential customers, suppliers, partners, competitors and adjacent markets.
+
+### Classify the industry
+
+Structured definitions create the foundation for consistently mapping companies, technologies, services, events and other parts of the data center ecosystem.
 
 ## Four Principles
 
-The framework is built around four core principles.
+### 1. Functions, not companies
 
-1. **Each layer depends on the one below it.** Nothing at the top exists without everything beneath it.
+The Stack classifies what is being done, not the organization doing it.
 
-2. **The stack represents functions, not companies.** Most organizations operate across multiple layers.
+A single company may operate across several layers.
 
-3. **No layer is optional.** Layers may be outsourced, but they cannot be skipped.
+### 2. Dependencies flow through the Stack
 
-4. **Some functions span the entire stack.** Security, connectivity, and compliance exist at every level.
+Every layer depends on capabilities provided by the layers beneath it.
 
----
+Digital workloads ultimately depend on physical infrastructure.
 
-## Version 1.0
+### 3. The boundaries are intentionally broad
 
-Version 1.0 is the first public release of The Data Center Stack.
+The framework is designed to make a complicated industry easier to understand, not create rigid boundaries between every technology or business model.
 
-The framework is intended to evolve through community discussion, practical use, and real-world feedback.
+The taxonomy provides additional detail where it is useful.
 
-### Join the conversation
+### 4. The framework should evolve
 
-**GitHub Discussions**
+The data center industry changes constantly.
 
-Use Discussions to:
+New technologies, infrastructure models and services will create categories that do not fit perfectly into today's definitions. The framework and taxonomy are intended to evolve with the industry while maintaining a stable underlying structure.
 
-- Share ideas
-- Ask questions
-- Challenge assumptions
-- Suggest new concepts
-- Discuss future directions
+## Potential Uses
 
-**GitHub Issues**
+The Data Center Stack can be used for:
 
-Use Issues to:
+- Industry education and training
+- Market and ecosystem mapping
+- Company and technology classification
+- Competitive analysis
+- Partner and supplier discovery
+- Event and conference analysis
+- Workforce and career mapping
+- Market research
+- AI and software classification
+- Identifying gaps and opportunities across the ecosystem
 
-- Report errors
-- Suggest specific improvements
-- Track proposed revisions
-- Request additions or corrections
+These are examples, not limits. One of the goals of making the project open is to see what other people build with it.
 
-Some questions we're actively exploring include:
+## Project Structure
 
-- Does this framework make the industry easier to explain?
-- Which layer needs the most refinement?
-- What is missing or oversimplified?
-- Should connectivity become its own layer?
+The repository contains:
 
----
+- **The Data Center Stack v1.0** visual framework
+- **Taxonomy** with structured industry classifications
+- **YAML and CSV data** for machine-readable use
+- **PNG, PDF and HTML** versions of the framework
+- **Documentation** explaining the methodology and classification approach
 
-## Using the Framework
+Start with the six-layer framework for the big picture, then use the taxonomy when you need deeper industry-level classification.
 
-Possible uses include:
+## Historical Context
 
-- Training and onboarding
-- Customer education
-- Executive presentations
-- Industry discussions
-- Project planning
-- Educational materials
+The idea of describing the data center as a layered stack is not new.
 
----
+In 2009, members of **Data Center Pulse** proposed a seven-layer “Data Center Stack,” modeled in part on the OSI networking model. The concept was covered by **Rich Miller in Data Center Knowledge** in *What Would a Data Center Stack Look Like?* on April 7, 2009.
 
-## Repository Contents
+The current Data Center Stack project was developed independently and takes a different approach, focusing on the modern data center ecosystem as six functional layers and extending that model with an open, machine-readable industry taxonomy.
 
-| File | Description |
-|------|-------------|
-| `the-data-center-stack-v1-0.png` | Presentation-ready graphic |
-| `the-data-center-stack-v1-0.pdf` | Printable version |
-| `the-data-center-stack-v1-0.html` | Editable HTML source |
+The earlier work is worth recognizing as part of the history of applying layered models to data center infrastructure.
 
----
+**Reference:** [What Would a Data Center Stack Look Like? — Data Center Knowledge, 2009](https://www.datacenterknowledge.com/build-design/what-would-a-data-center-stack-look-like-)
 
-## Roadmap
+## Contributing
 
-Future versions may include:
+The Data Center Stack is an open project.
 
-- Additional explanatory diagrams
-- Expanded examples
-- Community-driven refinements
-- Industry translations
-- Version history and changelog
+Feedback is welcome from people across the data center ecosystem, including operators, engineers, technicians, manufacturers, developers, contractors, logistics providers, cloud companies, researchers and others working across digital infrastructure.
 
-Suggestions are welcome.
+If you think an industry is missing, a definition needs improvement, a classification belongs somewhere else, or the framework does not accurately represent part of the ecosystem, open an Issue or join the Discussion.
 
----
+The goal is not to make the framework more complicated.
+
+The goal is to make it more useful.
+
+## Versioning
+
+The Data Center Stack framework and taxonomy will evolve as the industry changes and the classification system is tested against real-world companies, technologies and use cases.
+
+Major framework changes will be reflected in versioned releases.
+
+Taxonomy definitions may evolve more frequently as classifications are tested and refined.
 
 ## License
 
-The Data Center Stack is licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0) License](./LICENSE).
+The Data Center Stack is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](./LICENSE).
 
-You are welcome to use, share, adapt, and build upon the framework with appropriate attribution.
+You are free to share and adapt the framework and taxonomy, including for commercial use, provided appropriate attribution is given.
 
----
+Suggested attribution:
 
-## Attribution
+**The Data Center Stack by David Korté / DatacenterOps.com**
+
+## About
+
+The Data Center Stack was created by **David Korté**, founder of [DatacenterOps.com](https://datacenterops.com), to provide a simpler way to understand the increasingly complex data center ecosystem.
+
+The project is being developed openly so the framework can be tested, challenged and improved by people working across the industry.
 
 **The Data Center Stack v1.0**
 
-Created by **David Korté**
+[GitHub Repository](https://github.com/datacenterops/the-data-center-stack) | [DatacenterOps.com](https://datacenterops.com)
 
-DatacenterOps
-
-https://datacenterops.com
+*Licensed under CC BY 4.0.*
