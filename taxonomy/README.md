@@ -20,7 +20,7 @@ The taxonomy classifies organizations by the **data center function they directl
 
 The current draft contains **88 core industry definitions** across the six layers:
 
-| Layer | Function | Industries |
+| Layer | Taxonomy Action | Industries |
 |---|---|---:|
 | 1 — Foundation | Build | 12 |
 | 2 — Infrastructure | Supply | 18 |
