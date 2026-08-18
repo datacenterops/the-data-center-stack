@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Data Center Stack: AI User Guide & Infographic</title>
+<style>
+  :root{
+    --navy: #0b2545;
+    --navy-deep: #081b34;
+    --blue: #1f6fb2;
+    --blue-light: #eaf3fb;
+    --amber: #d99a2b;
+    --green: #2f8f5b;
+    --green-light: #e7f5ec;
+    --purple: #6c4a9c;
+    --teal: #1a9e8f;
+    --ink: #14213d;
+    --gray: #5b6472;
+    --line: #e3e6ec;
+    --paper: #fdfdfc;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background:#c9ccd2;
+    display:flex;
+    justify-content:center;
+    padding:24px;
+  }
+  .spread{
+    display:flex;
+    max-width:1400px;
+    width:100%;
+    box-shadow:0 20px 60px rgba(0,0,0,0.25);
+  }
+  /* ---------- LEFT PANEL ---------- */
+  .left{
+    background:var(--paper);
+    flex:1;
+    padding:40px 44px 50px;
+    color:var(--ink);
+  }
+  .filehead{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    color:var(--gray);
+    margin-bottom:22px;
+    font-family:'Courier New', monospace;
+  }
+  .filehead svg{width:14px;height:14px;flex:none;}
+  .left h1{
+    font-size:26px;
+    line-height:1.25;
+    margin:0 0 10px;
+    font-weight:800;
+    letter-spacing:-0.3px;
+  }
+  .left .lede{
+    color:var(--blue);
+    font-size:14.5px;
+    font-weight:600;
+    margin:0 0 18px;
+  }
+  hr.rule{border:none;border-top:1px solid var(--line);margin:0 0 26px;}
+  .left h2{
+    font-size:15px;
+    color:var(--blue);
+    font-weight:800;
+    margin:0 0 10px;
+    letter-spacing:0.2px;
+  }
+  .left p{
+    font-size:12.7px;
+    line-height:1.6;
+    color:#33394a;
+    margin:0 0 18px;
+  }
+  .section{margin-bottom:24px;}
+  .checklist{list-style:none;margin:0 0 16px;padding:0;font-size:12.5px;}
+  .checklist li{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;color:#33394a;}
+  .checklist li svg{flex:none;margin-top:2px;}
+  .sysbox{
+    background:var(--green-light);
+    border:1px solid #bfe2cc;
+    border-radius:6px;
+    padding:14px 16px 16px 44px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .sysbox .badge{
+    position:absolute;left:14px;top:14px;
+    width:20px;height:20px;border-radius:50%;
+    background:var(--green);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .sysbox .badge svg{width:11px;height:11px;}
+  .sysbox strong{display:block;font-size:12.5px;margin-bottom:4px;color:var(--ink);}
+  .sysbox span{font-size:12px;line-height:1.55;color:#33394a;}
+
+  .workflow{
+    display:flex;
+    align-items:flex-start;
+    gap:6px;
+    margin:6px 0 24px;
+  }
+  .wf-step{flex:1;text-align:center;}
+  .wf-circle{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--blue-light);
+    border:1.5px solid var(--blue);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 8px;
+  }
+  .wf-circle svg{width:20px;height:20px;}
+  .wf-title{font-size:11px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .wf-desc{font-size:10px;color:var(--gray);line-height:1.4;}
+  .wf-arrow{align-self:center;color:#b7bcc6;font-size:16px;margin-top:14px;}
+
+  .usecase{display:flex;gap:14px;margin-bottom:18px;}
+  .uc-icon{
+    width:44px;height:44px;border-radius:8px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .uc-icon svg{width:22px;height:22px;}
+  .uc-body{flex:1;}
+  .uc-num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--ink);color:#fff;font-size:9px;font-weight:700;
+    margin-right:6px;
+  }
+  .uc-title{font-size:13.5px;font-weight:800;color:var(--ink);display:inline;}
+  .uc-sub{font-size:11.5px;color:var(--gray);margin:3px 0 8px;}
+  .promptbox{
+    border-radius:5px;
+    padding:10px 12px;
+    font-family:'Courier New', monospace;
+    font-size:10px;
+    line-height:1.55;
+    color:#2b3242;
+    white-space:pre-wrap;
+  }
+  .promptbox b{font-weight:700;color:#182034;}
+  .pb-1{background:#e9f1fb;border:1px solid #cfe1f4;}
+  .pb-2{background:var(--green-light);border:1px solid #bfe2cc;}
+  .pb-3{background:#f1ecf8;border:1px solid #d8caed;}
+  .pb-4{background:#fbf3e2;border:1px solid #f0dbaa;}
+  .pb-5{background:#e2f4f1;border:1px solid #a8ddd4;}
+
+  .tips{font-size:11.5px;line-height:1.5;color:#33394a;padding-left:16px;margin:0 0 10px;}
+  .tips li{margin-bottom:4px;}
+  .gh{font-size:11.5px;color:var(--ink);}
+  .gh-line{line-height:1.6;margin-bottom:4px;}
+  .gh-line:last-child{margin-bottom:0;}
+  .gh a{color:var(--blue);text-decoration:none;font-weight:600;}
+
+  /* ---------- RIGHT PANEL ---------- */
+  .right{
+    background:var(--navy);
+    flex:1;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+  }
+  .r-inner{padding:36px 40px 0;flex:1;}
+  .r-hero{
+    background:var(--navy-deep);
+    margin:-36px -40px 26px;
+    padding:34px 40px 22px;
+  }
+  .r-hero h1{
+    font-size:27px;
+    font-weight:900;
+    line-height:1.18;
+    margin:0 0 8px;
+    letter-spacing:-0.3px;
+  }
+  .r-hero .sub{
+    color:#7fb8e8;
+    font-size:13.5px;
+    font-weight:600;
+    margin:0;
+  }
+  .r-h2{
+    text-align:center;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    color:#fff;
+    margin:0 0 18px;
+  }
+  .block{margin-bottom:30px;}
+
+  .whatyoucan{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:30px;
+  }
+  .wyc-card{
+    background:#12315a;
+    border-radius:8px;
+    padding:16px 10px 12px;
+    text-align:center;
+  }
+  .wyc-icon{
+    width:40px;height:40px;border-radius:50%;
+    background:#dbe9f7;
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 10px;
+  }
+  .wyc-icon svg{width:19px;height:19px;}
+  .wyc-card div.label{font-size:11px;font-weight:600;line-height:1.35;color:#e6edf6;}
+
+  .howworks{
+    display:grid;
+    grid-template-columns:1fr auto 1fr auto 1fr;
+    align-items:start;
+    margin-bottom:30px;
+  }
+  .hw-step{text-align:center;padding:0 4px;}
+  .hw-num{
+    width:26px;height:26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;color:#fff;
+    margin:0 auto 8px;
+  }
+  .hw-icon{margin-bottom:8px;}
+  .hw-icon svg{width:26px;height:26px;}
+  .hw-label{font-size:10.5px;color:#cdd9e8;line-height:1.35;}
+  .hw-arrow{align-self:center;color:#5c7797;font-size:16px;padding-top:34px;}
+
+  .layers{margin-bottom:26px;}
+  .layer-row{
+    display:flex;
+    align-items:stretch;
+    margin-bottom:6px;
+    border-radius:5px;
+    overflow:hidden;
+  }
+  .layer-num{
+    width:34px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:14px;color:#fff;
+  }
+  .layer-name{
+    width:190px;flex:none;
+    display:flex;align-items:center;gap:9px;
+    padding:10px 12px;color:#fff;font-weight:700;font-size:13px;
+  }
+  .layer-name svg{width:16px;height:16px;flex:none;}
+  .layer-desc{
+    flex:1;
+    background:#12315a;
+    display:flex;align-items:center;
+    padding:10px 14px;
+    font-size:11.3px;color:#d3ddea;line-height:1.4;
+  }
+
+  .enablers{
+    background:var(--navy-deep);
+    margin:0 0 30px;
+    border-radius:8px;
+    padding:18px 10px;
+  }
+  .enablers-title{
+    text-align:center;font-size:12px;font-weight:800;letter-spacing:1.2px;
+    color:#fff;margin-bottom:16px;
+  }
+  .enablers-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:6px;text-align:center;
+  }
+  .en-item svg{width:20px;height:20px;margin-bottom:6px;}
+  .en-item{color:#cfe0f2;font-size:10px;font-weight:600;display:flex;flex-direction:column;align-items:center;}
+
+  .example{margin-bottom:26px;}
+  .ex-grid{
+    display:grid;
+    grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+    align-items:center;
+  }
+  .ex-item{text-align:center;padding:0 4px;}
+  .ex-icon svg{width:30px;height:30px;margin-bottom:8px;}
+  .ex-big{font-size:19px;font-weight:900;color:#fff;}
+  .ex-small{font-size:10px;color:#c3d2e3;line-height:1.3;margin-top:2px;}
+  .ex-arrow{color:#5c7797;font-size:16px;}
+
+  .usecases-box{
+    border:1px solid #29456b;
+    border-radius:8px;
+    padding:18px 20px 20px;
+    margin-bottom:26px;
+  }
+  .usecases-box h3{
+    font-size:13px;font-weight:800;margin:0 0 6px;color:#fff;letter-spacing:0.3px;
+  }
+  .usecases-box p{
+    font-size:11px;color:#c3d2e3;line-height:1.55;margin:0 0 16px;
+  }
+  .uc-mini-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:10px 6px;text-align:center;
+  }
+  .uc-mini svg{width:22px;height:22px;margin-bottom:6px;}
+  .uc-mini{color:#e6edf6;font-size:10.5px;font-weight:700;display:flex;flex-direction:column;align-items:center;}
+
+  .footerbar{
+    background:var(--navy-deep);
+    display:flex;align-items:center;gap:14px;
+    padding:20px 40px;
+  }
+  .footerbar svg{width:26px;height:26px;flex:none;}
+  .footerbar .ftitle{font-size:13px;font-weight:800;color:#fff;margin-bottom:2px;}
+  .footerbar .fsub{font-size:11px;color:#b9c9dc;}
+
+  @media (max-width:960px){
+    .spread{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+<div class="spread">
+
+  <!-- ============ LEFT PANEL ============ -->
+  <div class="left">
+    <h1>The Data Center Stack Industry Taxonomy<br>AI User Guide</h1>
+    <p class="lede">How to use the taxonomy with AI to get real answers.</p>
+    <hr class="rule">
+
+    <div class="section">
+      <h2>1. Overview</h2>
+      <p>The Data Center Stack Industry Taxonomy is a six-layer framework covering the core industries of the data center ecosystem, plus ecosystem enablers. See the GitHub repository for the current industry list. This guide shows you how to reference the taxonomy in AI tools (ChatGPT, Claude, Gemini, etc.) to classify companies and analyze any company dataset.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Before You Start</h2>
+      <ul class="checklist">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2f8f5b" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Use the latest taxonomy from this GitHub repository.</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2f8f5b" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Provide company names (one per line or CSV).</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2f8f5b" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Tell the AI to use this taxonomy and not invent new categories.</li>
+      </ul>
+
+      <div class="sysbox">
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 2 4 5v6c0 5.2 3.4 9.4 8 11 4.6-1.6 8-5.8 8-11V5z"/></svg></div>
+        <strong>System Instruction (use this in every session)</strong>
+        <span>Use The Data Center Stack Industry Taxonomy from this GitHub repository as the classification framework for this analysis. Do not create additional industries or change the taxonomy without identifying them separately as proposed taxonomy gaps.</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. The Workflow</h2>
+      <div class="workflow">
+        <div class="wf-step">
+          <div class="wf-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#1f6fb2" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+          <div class="wf-title">1. Provide Your Company Data</div>
+          <div class="wf-desc">Paste or upload your company list (CSV or plain text).</div>
+        </div>
+        <div class="wf-arrow">›</div>
+        <div class="wf-step">
+          <div class="wf-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#1f6fb2" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="wf-title">2. Run a Prompt</div>
+          <div class="wf-desc">Choose a use case below. The taxonomy link is already built in.</div>
+        </div>
+        <div class="wf-arrow">›</div>
+        <div class="wf-step">
+          <div class="wf-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#1f6fb2" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg></div>
+          <div class="wf-title">3. Get Structured Results</div>
+          <div class="wf-desc">Receive classification, analysis, insights, and output files.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Five Common Functions (Use Cases)</h2>
+
+      <div class="usecase">
+        <div class="uc-icon" style="background:#dce9f8;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1f6fb2" stroke-width="2.3"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        </div>
+        <div class="uc-body">
+          <span class="uc-num">1</span><span class="uc-title">Company Classification</span>
+          <div class="uc-sub">Classify one or more companies to see where they fit in the Stack.</div>
+          <div class="promptbox pb-1"><b>Prompt (copy &amp; paste)</b>
+Taxonomy source: https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy
+
+Classify the following company(s) using The Data Center Stack Industry Taxonomy (linked above).
+Return for each company:
+- Primary Layer (1-6)
+- Industry Name (exact match from taxonomy)
+- Function Summary (1-2 sentences)
+- Confidence (High/Medium/Low)
+- Notes / Rationale
+
+Companies:
+&lt;PASTE COMPANY NAMES HERE&gt;</div>
+        </div>
+      </div>
+
+      <div class="usecase">
+        <div class="uc-icon" style="background:#d9efe1;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2f8f5b" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg>
+        </div>
+        <div class="uc-body">
+          <span class="uc-num">2</span><span class="uc-title">Dataset / Ecosystem Analysis</span>
+          <div class="uc-sub">Understand the composition of any company dataset.</div>
+          <div class="promptbox pb-2"><b>Prompt (copy &amp; paste)</b>
+Taxonomy source: https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy
+
+Analyze the following list of companies using The Data Center Stack Industry Taxonomy (linked above).
+Provide:
+- Total companies and % mapped to the taxonomy
+- Distribution by Layer (1-6) with counts and percentages
+- Top industries by count
+- Underrepresented layers/industries
+- Proposed taxonomy gaps (companies that don't fit well)
+- Key takeaways
+
+Companies:
+&lt;PASTE COMPANY LIST HERE&gt;</div>
+        </div>
+      </div>
+
+      <div class="usecase">
+        <div class="uc-icon" style="background:#e6def5;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6c4a9c" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="uc-body">
+          <span class="uc-num">3</span><span class="uc-title">Customer, Partner &amp; Competitor Mapping</span>
+          <div class="uc-sub">Identify relationships relative to your company.</div>
+          <div class="promptbox pb-3"><b>Prompt (copy &amp; paste)</b>
+Taxonomy source: https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy
+
+My company is: &lt;YOUR COMPANY NAME&gt;
+Our primary Layer is: &lt;1-6&gt; (or describe our primary function)
+
+Using The Data Center Stack Industry Taxonomy, analyze the following companies and group them as:
+- Potential Customers
+- Strategic Partners
+- Adjacent Competitors
+- Other / Not Directly Related
+Explain your reasoning for each group.
+
+Companies:
+&lt;PASTE COMPANY LIST HERE&gt;</div>
+        </div>
+      </div>
+
+      <div class="usecase">
+        <div class="uc-icon" style="background:#f7ecd6;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d99a2b" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="#d99a2b"/></svg>
+        </div>
+        <div class="uc-body">
+          <span class="uc-num">4</span><span class="uc-title">Market / Opportunity Analysis</span>
+          <div class="uc-sub">Find white space, concentration, and opportunity areas.</div>
+          <div class="promptbox pb-4"><b>Prompt (copy &amp; paste)</b>
+Taxonomy source: https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy
+
+Using The Data Center Stack Industry Taxonomy (linked above), analyze the following company dataset for market opportunity.
+Provide:
+- Overrepresented areas (where the market is crowded)
+- Underrepresented / white space areas
+- Adjacent layers or industries with high opportunity
+- Risks or gaps in the current ecosystem
+- Key strategic takeaways
+
+Companies:
+&lt;PASTE COMPANY LIST HERE&gt;</div>
+        </div>
+      </div>
+
+      <div class="usecase">
+        <div class="uc-icon" style="background:#d7f0eb;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1a9e8f" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><circle cx="9" cy="15" r="1.3" fill="#1a9e8f"/><circle cx="15" cy="15" r="1.3" fill="#1a9e8f"/></svg>
+        </div>
+        <div class="uc-body">
+          <span class="uc-num">5</span><span class="uc-title">Conference / Event Intelligence</span>
+          <div class="uc-sub">Analyze an attendee, sponsor, exhibitor, or speaker list to understand an event's relevance and find opportunities.</div>
+          <div class="promptbox pb-5"><b>Prompt (copy &amp; paste)</b>
+Taxonomy source: https://github.com/datacenterops/the-data-center-stack/tree/main/taxonomy
+
+Using The Data Center Stack Industry Taxonomy (linked above), analyze the following conference attendee/sponsor/exhibitor list.
+Provide:
+- Total organizations and % mapped to the taxonomy
+- Layer distribution (1-6) with counts and percentages
+- Industry distribution and areas of concentration
+- Potential customers and strategic partners
+- Competitors and adjacent players
+- Ecosystem gaps or underrepresented industries
+- Overall relevance of this event to our company
+- Key strategic takeaways
+
+Organizations:
+&lt;PASTE ORGANIZATION LIST HERE&gt;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Tips for Best Results</h2>
+      <ul class="tips">
+        <li>Provide clean company names (one per line). Include website or short description if possible.</li>
+        <li>If a company doesn't fit, ask the AI to propose a taxonomy gap with suggested placement.</li>
+        <li>Ask for CSV or table output to make results easy to use in spreadsheets.</li>
+        <li>Iterate. Refine prompts and re-run for deeper insights.</li>
+      </ul>
+      <div class="gh">
+        <div class="gh-line">GitHub: <a href="https://github.com/datacenterops/the-data-center-stack">https://github.com/datacenterops/the-data-center-stack</a></div>
+        <div class="gh-line">Questions or feedback? Open an issue or start a discussion.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ RIGHT PANEL ============ -->
+  <div class="right">
+    <div class="r-inner">
+      <div class="r-hero">
+        <h1>TURN COMPANY LISTS INTO<br>ECOSYSTEM INTELLIGENCE</h1>
+        <p class="sub">The Data Center Stack Industry Taxonomy + AI</p>
+      </div>
+
+      <div class="block">
+        <div class="r-h2">WHAT YOU CAN DO</div>
+        <div class="whatyoucan">
+          <div class="wyc-card">
+            <div class="wyc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1f6fb2" stroke-width="2"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
+            <div class="label">Classify companies</div>
+          </div>
+          <div class="wyc-card">
+            <div class="wyc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2f8f5b" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg></div>
+            <div class="label">Analyze any company dataset</div>
+          </div>
+          <div class="wyc-card">
+            <div class="wyc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6c4a9c" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="label">Map customers, partners &amp; competitors</div>
+          </div>
+          <div class="wyc-card">
+            <div class="wyc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#d99a2b" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="#d99a2b"/></svg></div>
+            <div class="label">Find opportunities &amp; white space</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="r-h2">HOW IT WORKS</div>
+        <div class="howworks">
+          <div class="hw-step">
+            <div class="hw-num" style="background:#1f6fb2;">1</div>
+            <div class="hw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+            <div class="hw-label">Provide your company list</div>
+          </div>
+          <div class="hw-arrow">›</div>
+          <div class="hw-step">
+            <div class="hw-num" style="background:#6c4a9c;">2</div>
+            <div class="hw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="hw-label">Run a prompt, taxonomy link included</div>
+          </div>
+          <div class="hw-arrow">›</div>
+          <div class="hw-step">
+            <div class="hw-num" style="background:#d99a2b;">3</div>
+            <div class="hw-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg></div>
+            <div class="hw-label">Get structured results &amp; insights</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="r-h2">THE SIX-LAYER FRAMEWORK</div>
+        <div class="layers">
+          <div class="layer-row">
+            <div class="layer-num" style="background:#0f3a63;">1</div>
+            <div class="layer-name" style="background:#0f3a63;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="m8 3-6 15h20L14 3z"/><path d="m2 18 6-9 3 4 3-6 8 11"/></svg>Foundation</div>
+            <div class="layer-desc">Land, power, utilities, cooling water, permits, real estate, sites.</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num" style="background:#155e8c;">2</div>
+            <div class="layer-name" style="background:#155e8c;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>Infrastructure</div>
+            <div class="layer-desc">Power infrastructure, cooling systems, IT hardware, network infrastructure.</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num" style="background:#1a9e8f;">3</div>
+            <div class="layer-name" style="background:#1a9e8f;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v18M6 21V10l6-4 6 4v11M3 21h18"/></svg>Deployment</div>
+            <div class="layer-desc">Design, engineering, construction, integration, installation.</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num" style="background:#2f8f5b;">4</div>
+            <div class="layer-name" style="background:#2f8f5b;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34H9a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87V9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg>Operations</div>
+            <div class="layer-desc">Facility operations, maintenance, monitoring, field services.</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num" style="background:#6c4a9c;">5</div>
+            <div class="layer-name" style="background:#6c4a9c;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="m12 2 9 5-9 5-9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>Platform</div>
+            <div class="layer-desc">Cloud, colocation, edge platforms, management software.</div>
+          </div>
+          <div class="layer-row">
+            <div class="layer-num" style="background:#d99a2b;">6</div>
+            <div class="layer-name" style="background:#d99a2b;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M4.5 19.5l2-2M17.5 6.5l2-2"/></svg>Workloads</div>
+            <div class="layer-desc">Applications, AI/ML, data, content, SaaS, enterprise workloads.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="enablers">
+        <div class="enablers-title">PLUS ECOSYSTEM ENABLERS</div>
+        <div class="enablers-grid">
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg>Consulting</div>
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="12" cy="13" r="3"/></svg>Finance</div>
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M7 8h10M7 12h6"/></svg>Media</div>
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><path d="M12 2 3 6v6c0 5 3.8 9 9 10 5.2-1 9-5 9-10V6z"/></svg>Associations</div>
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Training</div>
+          <div class="en-item"><svg viewBox="0 0 24 24" fill="none" stroke="#cfe0f2" stroke-width="2"><path d="M3 21h18M4 10h16M6 10V6l6-3 6 3v4M9 14v4M15 14v4"/></svg>Government</div>
+        </div>
+      </div>
+
+      <div class="block example">
+        <div class="r-h2">EXAMPLE: CONFERENCE INTELLIGENCE</div>
+        <div class="ex-grid">
+          <div class="ex-item">
+            <div class="ex-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2 20c0-3.3 3-5.5 7-5.5s7 2.2 7 5.5"/><path d="M14.5 15c3 .3 5 2.2 5 5"/></svg></div>
+            <div class="ex-big">183</div>
+            <div class="ex-small">Organizations Collected</div>
+          </div>
+          <div class="ex-arrow">›</div>
+          <div class="ex-item">
+            <div class="ex-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#57c98a" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></div>
+            <div class="ex-big">132</div>
+            <div class="ex-small">Mapped to the Taxonomy (72%)</div>
+          </div>
+          <div class="ex-arrow">›</div>
+          <div class="ex-item">
+            <div class="ex-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c79bf0" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="#c79bf0" stroke="none"/></svg></div>
+            <div class="ex-big">94%</div>
+            <div class="ex-small">in Layers 1-4 (Build → Operate)</div>
+          </div>
+          <div class="ex-arrow">›</div>
+          <div class="ex-item">
+            <div class="ex-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e8c24a" stroke-width="1.6" fill="#e8c24a"><path d="m12 2 3 6.5 7 1-5.2 5 1.3 7L12 18l-6.1 3.5 1.3-7-5.2-5 7-1z"/></svg></div>
+            <div class="ex-big" style="font-size:15px;">Very High</div>
+            <div class="ex-small">Overall Fit for Deployment (Layer 3)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usecases-box">
+        <h3>FIVE USE CASES. ENDLESS POSSIBILITIES.</h3>
+        <p>Apply the taxonomy to conferences, prospect lists, partner ecosystems, associations, regional markets, vendor databases, M&amp;A targets, and any other company dataset.</p>
+        <div class="uc-mini-grid">
+          <div class="uc-mini"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>Classify</div>
+          <div class="uc-mini"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg>Analyze</div>
+          <div class="uc-mini"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Map</div>
+          <div class="uc-mini"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="#7fb8e8"/></svg>Discover</div>
+          <div class="uc-mini"><svg viewBox="0 0 24 24" fill="none" stroke="#7fb8e8" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><circle cx="9" cy="15" r="1.3" fill="#7fb8e8"/><circle cx="15" cy="15" r="1.3" fill="#7fb8e8"/></svg>Events</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footerbar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#e8c24a" stroke-width="1.8"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.3h6c0-1.1.4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg>
+      <div>
+        <div class="ftitle">ONE TAXONOMY. MANY INSIGHTS.</div>
+        <div class="fsub">Understand where companies fit, how they relate, and where the opportunities are.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
