@@ -25,7 +25,7 @@ New to GitHub or just want the fastest path to what you need? Use this table.
 | See the taxonomy applied to real-world data | [examples/](examples) |
 | Understand the licensing terms | [LICENSE](LICENSE) |
  
-**Not sure where to begin?** Start with the PNG for the big picture, then come back to this README for the six-layer explanation and the four principles below. Only go into the `taxonomy` folder once you need to classify something specific — it's detailed by design.
+**Not sure where to begin?** Start with the PNG for the big picture, then come back to this README for the six-layer explanation and the four principles below. Only go into the `taxonomy` folder once you need to classify something specific. It's detailed by design.
 
 ## Overview
 
